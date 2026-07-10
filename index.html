@@ -26,14 +26,6 @@ font-family:'Poppins',sans-serif;
 }
 
 
-html{
-
-scroll-behavior:smooth;
-
-}
-
-
-
 body{
 
 background:#050505;
@@ -46,7 +38,7 @@ overflow-x:hidden;
 
 
 
-/* ===== Background Animation ===== */
+/* ===== Background ===== */
 
 
 body::before{
@@ -55,9 +47,9 @@ content:"";
 
 position:fixed;
 
-width:600px;
+width:500px;
 
-height:600px;
+height:500px;
 
 background:#38bdf8;
 
@@ -65,15 +57,16 @@ filter:blur(180px);
 
 opacity:.25;
 
-top:-200px;
+top:-150px;
 
-left:-200px;
+left:-150px;
 
 z-index:-1;
 
-animation:moveLight 8s infinite alternate;
+animation:light1 8s infinite alternate;
 
 }
+
 
 
 body::after{
@@ -88,31 +81,29 @@ height:500px;
 
 background:#8b5cf6;
 
-filter:blur(170px);
+filter:blur(180px);
 
 opacity:.25;
 
-bottom:-200px;
+bottom:-150px;
 
 right:-150px;
 
 z-index:-1;
 
-animation:moveLight2 10s infinite alternate;
+animation:light2 10s infinite alternate;
 
 }
 
 
 
-@keyframes moveLight{
-
+@keyframes light1{
 
 from{
 
-transform:translate(0,0);
+transform:translate(0);
 
 }
-
 
 to{
 
@@ -120,27 +111,23 @@ transform:translate(150px,100px);
 
 }
 
-
 }
 
 
 
-@keyframes moveLight2{
-
+@keyframes light2{
 
 from{
 
-transform:translate(0,0);
+transform:translate(0);
 
 }
-
 
 to{
 
 transform:translate(-150px,-100px);
 
 }
-
 
 }
 
@@ -151,6 +138,7 @@ transform:translate(-150px,-100px);
 
 nav{
 
+width:100%;
 
 position:fixed;
 
@@ -158,7 +146,7 @@ top:0;
 
 left:0;
 
-width:100%;
+z-index:999;
 
 
 display:flex;
@@ -171,16 +159,12 @@ align-items:center;
 padding:20px 8%;
 
 
-background:rgba(255,255,255,.05);
+background:rgba(0,0,0,.35);
 
 backdrop-filter:blur(20px);
 
 
 border-bottom:1px solid rgba(255,255,255,.1);
-
-
-z-index:1000;
-
 
 }
 
@@ -188,15 +172,11 @@ z-index:1000;
 
 .logo{
 
-
 font-size:28px;
 
 font-weight:700;
 
 color:#38bdf8;
-
-letter-spacing:2px;
-
 
 }
 
@@ -204,35 +184,31 @@ letter-spacing:2px;
 
 nav ul{
 
-
 display:flex;
 
 list-style:none;
 
-
 }
+
 
 
 nav ul li{
 
-
 margin-left:30px;
-
 
 }
 
 
-nav ul li a{
 
+nav ul li a{
 
 text-decoration:none;
 
 color:white;
 
-font-size:15px;
-
 transition:.3s;
 
+font-size:15px;
 
 }
 
@@ -240,12 +216,9 @@ transition:.3s;
 
 nav ul li a:hover{
 
-
 color:#38bdf8;
 
-
 text-shadow:0 0 15px #38bdf8;
-
 
 }
 
@@ -256,15 +229,13 @@ text-shadow:0 0 15px #38bdf8;
 
 .hero{
 
-
 min-height:100vh;
-
 
 display:flex;
 
-align-items:center;
-
 justify-content:center;
+
+align-items:center;
 
 
 padding:120px 8%;
@@ -272,9 +243,202 @@ padding:120px 8%;
 
 gap:80px;
 
+flex-wrap:wrap;
+
+}
+
+
+
+/* ===== Content ===== */
+
+
+.content{
+
+max-width:650px;
+
+animation:show 1s ease;
+
+}
+
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+.content h3{
+
+color:#38bdf8;
+
+font-size:25px;
+
+}
+
+
+
+.content h1{
+
+font-size:65px;
+
+margin:15px 0;
+
+
+background:linear-gradient(
+
+90deg,
+
+#38bdf8,
+
+#8b5cf6
+
+);
+
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+
+
+.content h2{
+
+font-size:30px;
+
+color:#e5e7eb;
+
+margin-bottom:20px;
+
+}
+
+
+
+.content p{
+
+color:#d1d5db;
+
+line-height:1.9;
+
+font-size:17px;
+
+}
+
+
+
+/* ===== Quote ===== */
+
+
+.quote{
+
+margin:30px 0;
+
+font-size:22px;
+
+font-style:italic;
+
+color:#facc15;
+
+
+border-left:5px solid #facc15;
+
+padding-left:20px;
+
+}
+
+
+
+/* ===== Button ===== */
+
+
+.btn-area{
+
+display:flex;
 
 flex-wrap:wrap;
 
+gap:15px;
+
+margin-top:35px;
+
+}
+
+
+
+.btn{
+
+display:inline-block;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+
+text-decoration:none;
+
+color:white;
+
+
+background:
+
+linear-gradient(
+
+45deg,
+
+#3b82f6,
+
+#8b5cf6
+
+);
+
+
+transition:.4s;
+
+}
+
+
+
+.btn:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 30px #38bdf8;
+
+}
+
+
+
+.btn2{
+
+background:transparent;
+
+border:2px solid #38bdf8;
+
+}
+
+
+
+.btn2:hover{
+
+background:#38bdf8;
 
 }
 
@@ -285,21 +449,17 @@ flex-wrap:wrap;
 
 .profile{
 
-
 position:relative;
-
 
 }
 
 
-.profile::before{
 
+.profile::before{
 
 content:"";
 
-
 position:absolute;
-
 
 inset:-15px;
 
@@ -307,7 +467,9 @@ inset:-15px;
 border-radius:50%;
 
 
-background:linear-gradient(
+background:
+
+linear-gradient(
 
 45deg,
 
@@ -325,13 +487,11 @@ animation:rotate 6s linear infinite;
 
 z-index:-1;
 
-
 }
 
 
 
 @keyframes rotate{
-
 
 from{
 
@@ -345,7 +505,6 @@ to{
 transform:rotate(360deg);
 
 }
-
 
 }
 
@@ -370,18 +529,7 @@ border:8px solid #050505;
 
 box-shadow:
 
-
 0 0 40px #38bdf8;
-
-
-}
-
-
-
-.profile:hover img{
-
-
-transform:scale(1.05);
 
 
 transition:.5s;
@@ -391,306 +539,89 @@ transition:.5s;
 
 
 
-/* ===== Content ===== */
+.profile img:hover{
 
-
-.content{
-
-
-max-width:650px;
-
-
-animation:show .8s ease;
-
+transform:scale(1.05);
 
 }
+    /style>
 
+</head>
 
-@keyframes show{
 
+<body>
 
-from{
 
 
-opacity:0;
+<nav>
 
-transform:translateY(50px);
+<div class="logo">
 
+MY PORTFOLIO
 
-}
+</div>
 
 
-to{
+<ul>
 
+<li><a href="index.html">หน้าแรก</a></li>
 
-opacity:1;
+<li><a href="about.html">ประวัติส่วนตัว</a></li>
 
-transform:translateY(0);
+<li><a href="education.html">ประวัติการศึกษา</a></li>
 
+<li><a href="skills.html">ความสามารถ ทักษะ</a></li>
 
-}
+<li><a href="portfolio.html">ผลงานและกิจกรรม</a></li>
 
+<li><a href="contact.html">ติดต่อ</a></li>
 
-}
+</ul>
 
 
+</nav>
 
-.content h3{
 
 
-color:#38bdf8;
 
-font-size:25px;
+<section class="hero">
 
 
-}
 
+<div class="content">
 
 
-.content h1{
+<h3>
 
+สวัสดีครับ ผมคือ
 
-font-size:65px;
+</h3>
 
 
-margin:10px 0;
+<h1>
 
+นายสุทธิภัทร พรมราช
 
-background:
+</h1>
 
-linear-gradient(
 
-90deg,
+<h2>
 
-#38bdf8,
+Web Developer & Designer
 
-#8b5cf6
+</h2>
 
-);
 
+<p>
 
--webkit-background-clip:text;
+ผมเชื่อว่าเว็บไซต์ที่ดี ไม่ได้มีแค่ความสวยงาม แต่ต้องสร้างประสบการณ์ที่น่าประทับใจให้กับผู้ใช้งานทุกคน
 
--webkit-text-fill-color:transparent;
+</p>
 
-
-}
-
-
-
-.content h2{
-
-
-font-size:30px;
-
-color:#e5e7eb;
-
-margin-bottom:20px;
-
-
-}
-
-
-
-.content p{
-
-
-color:#d1d5db;
-
-line-height:1.9;
-
-font-size:17px;
-
-
-}
-
-
-
-/* Quote */
-
-
-.quote{
-
-
-margin:30px 0;
-
-
-font-size:22px;
-
-
-font-style:italic;
-
-
-color:#facc15;
-
-
-border-left:5px solid #facc15;
-
-
-padding-left:20px;
-
-
-}
-
-
-
-/* Button */
-
-
-.btn-area{
-
-
-display:flex;
-
-gap:15px;
-
-flex-wrap:wrap;
-
-
-}
-
-
-
-.btn{
-
-
-padding:15px 35px;
-
-
-border-radius:50px;
-
-
-text-decoration:none;
-
-
-color:white;
-
-
-background:
-
-linear-gradient(
-
-45deg,
-
-#3b82f6,
-
-#8b5cf6
-
-);
-
-
-transition:.4s;
-
-
-}
-
-
-
-.btn:hover{
-
-
-transform:translateY(-8px);
-
-
-box-shadow:
-
-0 0 30px #38bdf8;
-
-
-}
-
-
-
-.btn2{
-
-
-background:transparent;
-
-
-border:2px solid #38bdf8;
-
-
-}
-
-
-
-.btn2:hover{
-
-
-background:#38bdf8;
-
-
-}
-
-.typing{
-
-color:#38bdf8;
-
-font-weight:700;
-
-border-right:3px solid #38bdf8;
-
-white-space:nowrap;
-
-overflow:hidden;
-
-animation:
-
-typing 4s steps(30) infinite,
-
-cursor .7s infinite;
-
-}
-
-
-
-@keyframes typing{
-
-
-0%{
-
-width:0;
-
-}
-
-
-50%{
-
-width:100%;
-
-}
-
-
-100%{
-
-width:0;
-
-}
-
-
-}
-
-
-
-@keyframes cursor{
-
-
-50%{
-
-border-color:transparent;
-
-}
-
-
-}
-
-
-
-/* ===== Profile Card ===== */
+/* ===== Information Cards ===== */
 
 
 .info-section{
-
 
 width:90%;
 
@@ -701,7 +632,6 @@ margin:80px auto;
 
 display:grid;
 
-
 grid-template-columns:
 
 repeat(auto-fit,minmax(250px,1fr));
@@ -709,13 +639,11 @@ repeat(auto-fit,minmax(250px,1fr));
 
 gap:25px;
 
-
 }
 
 
 
 .info-card{
-
 
 background:
 
@@ -743,13 +671,12 @@ transition:.4s;
 
 .info-card:hover{
 
-
 transform:translateY(-15px);
 
 
 box-shadow:
 
-0 0 30px rgba(56,189,248,.4);
+0 0 35px rgba(56,189,248,.4);
 
 
 border-color:#38bdf8;
@@ -761,15 +688,11 @@ border-color:#38bdf8;
 
 .info-card h3{
 
+font-size:25px;
 
 color:#38bdf8;
 
-
-font-size:25px;
-
-
 margin-bottom:15px;
-
 
 }
 
@@ -777,22 +700,18 @@ margin-bottom:15px;
 
 .info-card p{
 
-
 color:#d1d5db;
 
-
 line-height:1.8;
-
 
 }
 
 
 
-/* ===== Statistics ===== */
+/* ===== Stats ===== */
 
 
 .stats{
-
 
 width:90%;
 
@@ -810,7 +729,7 @@ grid-template-columns:
 repeat(auto-fit,minmax(200px,1fr));
 
 
-gap:20px;
+gap:25px;
 
 
 }
@@ -818,7 +737,6 @@ gap:20px;
 
 
 .stat-box{
-
 
 text-align:center;
 
@@ -854,13 +772,12 @@ transition:.4s;
 
 .stat-box:hover{
 
-
 transform:scale(1.08);
 
 
 box-shadow:
 
-0 0 35px rgba(139,92,246,.5);
+0 0 30px #8b5cf6;
 
 
 }
@@ -869,12 +786,9 @@ box-shadow:
 
 .stat-box h1{
 
-
 font-size:45px;
 
-
 color:#38bdf8;
-
 
 }
 
@@ -882,293 +796,168 @@ color:#38bdf8;
 
 .stat-box p{
 
-
 color:#ddd;
 
+margin-top:10px;
 
 }
 
 
 
-/* ===== Scroll Down ===== */
+/* ===== Floating Light ===== */
 
 
-.scroll{
-
+.floating{
 
 position:absolute;
-
-
-bottom:30px;
-
-
-left:50%;
-
-
-transform:translateX(-50%);
-
-
-}
-
-
-
-.scroll span{
-
-
-display:block;
-
-
-width:25px;
-
-
-height:40px;
-
-
-border:3px solid #38bdf8;
-
-
-border-radius:20px;
-
-
-position:relative;
-
-
-}
-
-
-
-.scroll span::before{
-
-
-content:"";
-
-
-position:absolute;
-
-
-width:6px;
-
-
-height:10px;
-
-
-background:#38bdf8;
-
-
-border-radius:10px;
-
-
-left:50%;
-
-
-top:8px;
-
-
-transform:translateX(-50%);
-
-
-animation:scrollMove 1.5s infinite;
-
-
-}
-
-
-
-@keyframes scrollMove{
-
-
-0%{
-
-
-transform:translate(-50%,0);
-
-
-opacity:1;
-
-
-}
-
-
-100%{
-
-
-transform:translate(-50%,15px);
-
-
-opacity:0;
-
-
-}
-
-
-}
-
-
-
-/* ===== Floating Circle ===== */
-
-
-.circle{
-
-
-position:absolute;
-
 
 border-radius:50%;
 
-
 filter:blur(2px);
 
-
-animation:floating 5s infinite alternate;
-
+animation:float 5s infinite alternate;
 
 }
 
 
 
-.circle.one{
-
+.floating.one{
 
 width:80px;
 
-
 height:80px;
-
 
 background:#38bdf8;
 
-
 opacity:.3;
 
+top:25%;
 
-top:20%;
-
-
-left:10%;
-
+left:8%;
 
 }
 
 
 
-.circle.two{
-
+.floating.two{
 
 width:120px;
 
-
 height:120px;
-
 
 background:#8b5cf6;
 
-
 opacity:.2;
-
-
-bottom:15%;
-
 
 right:10%;
 
+bottom:20%;
 
 }
 
 
 
-@keyframes floating{
-
+@keyframes float{
 
 from{
 
-
 transform:translateY(0);
 
-
 }
-
 
 to{
 
-
 transform:translateY(-40px);
 
-
 }
 
-
 }
+    <!-- Floating Background -->
 
-จากนั้นให้นำ HTML ส่วนนี้ไปวาง ต่อจาก </section> ของ Hero ก่อน </body>
+<div class="floating one"></div>
 
-
-<!-- Floating Light -->
-
-<div class="circle one"></div>
-
-<div class="circle two"></div>
+<div class="floating two"></div>
 
 
 
-<!-- Scroll -->
 
-<div class="scroll">
-
-<span></span>
-
-</div>
-
-
-
-<!-- Information Cards -->
+<!-- About Cards -->
 
 
 <section class="info-section">
 
 
+
 <div class="info-card">
 
-<h3>👨‍💻 About Me</h3>
+
+<h3>
+
+👨‍💻 About Me
+
+</h3>
+
 
 <p>
 
-นักเรียนระดับชั้นมัธยมศึกษาปีที่ 6 ที่มีความสนใจด้าน Web Development, UI Design และเทคโนโลยีดิจิทัล พร้อมพัฒนาตนเองอย่างต่อเนื่อง
+นักเรียนระดับชั้นมัธยมศึกษาปีที่ 6 ที่มีความสนใจด้านการพัฒนาเว็บไซต์ การออกแบบ UI และเทคโนโลยีดิจิทัล พร้อมเรียนรู้สิ่งใหม่ ๆ อยู่เสมอ
 
 </p>
+
 
 </div>
 
 
 
+
+
 <div class="info-card">
 
-<h3>💡 My Passion</h3>
+
+<h3>
+
+🚀 My Passion
+
+</h3>
+
 
 <p>
 
-มุ่งมั่นสร้างเว็บไซต์ที่มีความสวยงาม ใช้งานง่าย และสร้างประสบการณ์ที่ดีให้กับผู้ใช้งาน
+ผมสนใจการสร้างเว็บไซต์ที่มีทั้งความสวยงาม ใช้งานง่าย และสามารถสร้างประสบการณ์ที่ดีให้กับผู้ใช้งาน
 
 </p>
+
 
 </div>
 
 
 
+
+
 <div class="info-card">
 
-<h3>🎯 My Goal</h3>
+
+<h3>
+
+🎯 My Goal
+
+</h3>
+
 
 <p>
 
-ศึกษาต่อในระดับมหาวิทยาลัยด้านเทคโนโลยีสารสนเทศ วิทยาการคอมพิวเตอร์ หรือสาขาที่เกี่ยวข้อง
+เป้าหมายคือการศึกษาต่อในระดับมหาวิทยาลัยด้านเทคโนโลยีสารสนเทศ วิทยาการคอมพิวเตอร์ หรือสาขาที่เกี่ยวข้อง
 
 </p>
 
+
 </div>
+
 
 
 </section>
+
+
 
 
 
@@ -1178,79 +967,70 @@ transform:translateY(-40px);
 <section class="stats">
 
 
+
 <div class="stat-box">
 
-<h1>3+</h1>
+<h1>
 
-<p>ปีแห่งการเรียนรู้เทคโนโลยี</p>
+3+
+
+</h1>
+
+<p>
+
+ปีแห่งการเรียนรู้เทคโนโลยี
+
+</p>
 
 </div>
 
 
-<div class="stat-box">
-
-<h1>10+</h1>
-
-<p>ผลงานและกิจกรรม</p>
-
-</div>
 
 
 <div class="stat-box">
 
-<h1>5+</h1>
+<h1>
 
-<p>ทักษะด้านดิจิทัล</p>
+10+
+
+</h1>
+
+<p>
+
+ผลงานและกิจกรรม
+
+</p>
 
 </div>
+
+
+
+
+<div class="stat-box">
+
+<h1>
+
+5+
+
+</h1>
+
+<p>
+
+ทักษะด้านดิจิทัล
+
+</p>
+
+</div>
+
 
 
 </section>
-    /* ===== Page Loading Animation ===== */
-
-
-.hero,
-.info-section,
-.stats{
-
-animation:fadeIn 1.2s ease;
-
-}
-
-
-@keyframes fadeIn{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-}
-
-
-
-/* ===== Footer ===== */
+    /* ===== Footer ===== */
 
 
 footer{
 
-
-margin-top:80px;
-
+margin-top:100px;
 
 padding:50px 20px;
 
@@ -1261,7 +1041,9 @@ text-align:center;
 background:rgba(0,0,0,.5);
 
 
-border-top:1px solid rgba(255,255,255,.1);
+border-top:
+
+1px solid rgba(255,255,255,.1);
 
 
 }
@@ -1271,10 +1053,10 @@ border-top:1px solid rgba(255,255,255,.1);
 footer h2{
 
 
-color:#38bdf8;
-
-
 font-size:30px;
+
+
+color:#38bdf8;
 
 
 margin-bottom:15px;
@@ -1297,27 +1079,64 @@ line-height:1.8;
 
 
 
-/* ===== Responsive Mobile ===== */
 
 
-@media(max-width:768px){
+/* ===== Scroll Animation ===== */
+
+
+.hero,
+.info-section,
+.stats,
+footer{
+
+
+animation:fadeUp 1s ease;
+
+}
 
 
 
-nav{
+@keyframes fadeUp{
 
 
-padding:15px 5%;
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
 
 
 }
 
 
 
-.logo{
 
 
-font-size:22px;
+/* ===== Mobile Responsive ===== */
+
+
+@media(max-width:900px){
+
+
+
+nav{
+
+
+flex-direction:column;
+
+
+padding:20px;
 
 
 }
@@ -1330,13 +1149,10 @@ nav ul{
 margin-top:15px;
 
 
-gap:10px;
+flex-wrap:wrap;
 
 
 justify-content:center;
-
-
-flex-wrap:wrap;
 
 
 }
@@ -1346,17 +1162,7 @@ flex-wrap:wrap;
 nav ul li{
 
 
-margin-left:10px;
-
-
-}
-
-
-
-nav ul li a{
-
-
-font-size:13px;
+margin:8px;
 
 
 }
@@ -1366,7 +1172,7 @@ font-size:13px;
 .hero{
 
 
-padding-top:160px;
+padding-top:180px;
 
 
 text-align:center;
@@ -1389,7 +1195,7 @@ font-size:42px;
 .content h2{
 
 
-font-size:22px;
+font-size:24px;
 
 
 }
@@ -1400,9 +1206,6 @@ font-size:22px;
 
 
 font-size:15px;
-
-
-text-align:center;
 
 
 }
@@ -1442,11 +1245,17 @@ justify-content:center;
 
 
 
+.info-card{
+
+
+text-align:center;
+
+
 }
 
 
 
-2) เพิ่ม Footer ก่อน </body>
+}
 
 <footer>
 
@@ -1480,25 +1289,3 @@ Portfolio สำหรับใช้ประกอบการสมัคร�
 
 
 </footer>
-3) แก้ส่วนหัวข้อ Web Developer ให้มี Typing Effect
-
-จากเดิม
-
-<h2>Web Developer & Designer</h2>
-
-เปลี่ยนเป็น
-
-<h2 class="typing">
-Web Developer & Designer
-</h2>
-4) แก้ Navbar ให้มีเงาเวลาเลื่อน
-
-เพิ่มใน CSS
-
-nav{
-
-box-shadow:
-
-0 10px 30px rgba(0,0,0,.4);
-
-}
