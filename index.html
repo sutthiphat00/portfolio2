@@ -15,7 +15,6 @@
 
 <style>
 
-
 *{
 
 margin:0;
@@ -28,126 +27,34 @@ font-family:'Poppins',sans-serif;
 
 body{
 
-background:#050505;
+background:
+
+linear-gradient(
+
+135deg,
+
+#050505,
+
+#111827,
+
+#1e1b4b
+
+);
+
 
 color:white;
 
-overflow-x:hidden;
-
 }
 
 
 
-/* ===== Background ===== */
-
-
-body::before{
-
-content:"";
-
-position:fixed;
-
-width:500px;
-
-height:500px;
-
-background:#38bdf8;
-
-filter:blur(180px);
-
-opacity:.25;
-
-top:-150px;
-
-left:-150px;
-
-z-index:-1;
-
-animation:light1 8s infinite alternate;
-
-}
-
-
-
-body::after{
-
-content:"";
-
-position:fixed;
-
-width:500px;
-
-height:500px;
-
-background:#8b5cf6;
-
-filter:blur(180px);
-
-opacity:.25;
-
-bottom:-150px;
-
-right:-150px;
-
-z-index:-1;
-
-animation:light2 10s infinite alternate;
-
-}
-
-
-
-@keyframes light1{
-
-from{
-
-transform:translate(0);
-
-}
-
-to{
-
-transform:translate(150px,100px);
-
-}
-
-}
-
-
-
-@keyframes light2{
-
-from{
-
-transform:translate(0);
-
-}
-
-to{
-
-transform:translate(-150px,-100px);
-
-}
-
-}
-
-
-
-/* ===== Navbar ===== */
+/* Navbar */
 
 
 nav{
 
+
 width:100%;
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-z-index:999;
-
 
 display:flex;
 
@@ -159,12 +66,20 @@ align-items:center;
 padding:20px 8%;
 
 
-background:rgba(0,0,0,.35);
+position:fixed;
 
-backdrop-filter:blur(20px);
+top:0;
+
+left:0;
 
 
-border-bottom:1px solid rgba(255,255,255,.1);
+background:rgba(0,0,0,.4);
+
+backdrop-filter:blur(10px);
+
+
+z-index:100;
+
 
 }
 
@@ -172,11 +87,13 @@ border-bottom:1px solid rgba(255,255,255,.1);
 
 .logo{
 
+
 font-size:28px;
 
 font-weight:700;
 
 color:#38bdf8;
+
 
 }
 
@@ -184,9 +101,11 @@ color:#38bdf8;
 
 nav ul{
 
+
 display:flex;
 
 list-style:none;
+
 
 }
 
@@ -194,7 +113,9 @@ list-style:none;
 
 nav ul li{
 
+
 margin-left:30px;
+
 
 }
 
@@ -202,13 +123,13 @@ margin-left:30px;
 
 nav ul li a{
 
-text-decoration:none;
 
 color:white;
 
+text-decoration:none;
+
 transition:.3s;
 
-font-size:15px;
 
 }
 
@@ -216,26 +137,29 @@ font-size:15px;
 
 nav ul li a:hover{
 
+
 color:#38bdf8;
 
-text-shadow:0 0 15px #38bdf8;
 
 }
 
 
 
-/* ===== Hero ===== */
+
+/* Hero */
 
 
 .hero{
 
+
 min-height:100vh;
+
 
 display:flex;
 
-justify-content:center;
-
 align-items:center;
+
+justify-content:center;
 
 
 padding:120px 8%;
@@ -243,42 +167,52 @@ padding:120px 8%;
 
 gap:80px;
 
+
 flex-wrap:wrap;
+
 
 }
 
 
 
-/* ===== Content ===== */
+/* Profile */
+
+
+.profile img{
+
+
+width:320px;
+
+height:320px;
+
+
+border-radius:50%;
+
+
+object-fit:cover;
+
+
+border:5px solid #38bdf8;
+
+
+box-shadow:
+
+0 0 30px rgba(56,189,248,.5);
+
+
+}
+
+
+
+
+/* Content */
 
 
 .content{
 
+
 max-width:650px;
 
-animation:show 1s ease;
-
-}
-
-
-
-@keyframes show{
-
-from{
-
-opacity:0;
-
-transform:translateY(50px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
 
 }
 
@@ -286,9 +220,11 @@ transform:translateY(0);
 
 .content h3{
 
-color:#38bdf8;
 
 font-size:25px;
+
+color:#38bdf8;
+
 
 }
 
@@ -296,12 +232,16 @@ font-size:25px;
 
 .content h1{
 
-font-size:65px;
+
+font-size:60px;
+
 
 margin:15px 0;
 
 
-background:linear-gradient(
+background:
+
+linear-gradient(
 
 90deg,
 
@@ -316,17 +256,21 @@ background:linear-gradient(
 
 -webkit-text-fill-color:transparent;
 
+
 }
 
 
 
 .content h2{
 
-font-size:30px;
+
+font-size:28px;
+
+margin-bottom:20px;
+
 
 color:#e5e7eb;
 
-margin-bottom:20px;
 
 }
 
@@ -334,65 +278,59 @@ margin-bottom:20px;
 
 .content p{
 
+
 color:#d1d5db;
 
-line-height:1.9;
+
+line-height:1.8;
+
 
 font-size:17px;
 
+
 }
 
-
-
-/* ===== Quote ===== */
 
 
 .quote{
 
+
 margin:30px 0;
 
-font-size:22px;
+
+font-size:20px;
+
 
 font-style:italic;
+
 
 color:#facc15;
 
 
-border-left:5px solid #facc15;
-
-padding-left:20px;
-
 }
 
 
 
-/* ===== Button ===== */
-
-
-.btn-area{
-
-display:flex;
-
-flex-wrap:wrap;
-
-gap:15px;
-
-margin-top:35px;
-
-}
-
+/* Button */
 
 
 .btn{
 
+
 display:inline-block;
 
-padding:15px 35px;
 
-border-radius:50px;
+padding:14px 30px;
+
+
+margin:5px;
+
+
+border-radius:30px;
 
 
 text-decoration:none;
+
 
 color:white;
 
@@ -410,7 +348,8 @@ linear-gradient(
 );
 
 
-transition:.4s;
+transition:.3s;
+
 
 }
 
@@ -418,9 +357,14 @@ transition:.4s;
 
 .btn:hover{
 
-transform:translateY(-8px);
 
-box-shadow:0 0 30px #38bdf8;
+transform:translateY(-5px);
+
+
+box-shadow:
+
+0 0 20px #38bdf8;
+
 
 }
 
@@ -428,123 +372,24 @@ box-shadow:0 0 30px #38bdf8;
 
 .btn2{
 
+
 background:transparent;
+
 
 border:2px solid #38bdf8;
 
-}
 
+}
 
 
 .btn2:hover{
 
+
 background:#38bdf8;
 
-}
-
-
-
-/* ===== Profile ===== */
-
-
-.profile{
-
-position:relative;
 
 }
-
-
-
-.profile::before{
-
-content:"";
-
-position:absolute;
-
-inset:-15px;
-
-
-border-radius:50%;
-
-
-background:
-
-linear-gradient(
-
-45deg,
-
-#38bdf8,
-
-#8b5cf6,
-
-#38bdf8
-
-);
-
-
-animation:rotate 6s linear infinite;
-
-
-z-index:-1;
-
-}
-
-
-
-@keyframes rotate{
-
-from{
-
-transform:rotate(0deg);
-
-}
-
-
-to{
-
-transform:rotate(360deg);
-
-}
-
-}
-
-
-
-.profile img{
-
-
-width:330px;
-
-height:330px;
-
-
-border-radius:50%;
-
-
-object-fit:cover;
-
-
-border:8px solid #050505;
-
-
-box-shadow:
-
-0 0 40px #38bdf8;
-
-
-transition:.5s;
-
-
-}
-
-
-
-.profile img:hover{
-
-transform:scale(1.05);
-
-}
-    /style>
+    </style>
 
 </head>
 
@@ -555,6 +400,7 @@ transform:scale(1.05);
 
 <nav>
 
+
 <div class="logo">
 
 MY PORTFOLIO
@@ -562,7 +408,9 @@ MY PORTFOLIO
 </div>
 
 
+
 <ul>
+
 
 <li><a href="index.html">หน้าแรก</a></li>
 
@@ -576,6 +424,7 @@ MY PORTFOLIO
 
 <li><a href="contact.html">ติดต่อ</a></li>
 
+
 </ul>
 
 
@@ -585,7 +434,6 @@ MY PORTFOLIO
 
 
 <section class="hero">
-
 
 
 <div class="content">
@@ -614,609 +462,104 @@ Web Developer & Designer
 
 <p>
 
-ผมเชื่อว่าเว็บไซต์ที่ดี ไม่ได้มีแค่ความสวยงาม แต่ต้องสร้างประสบการณ์ที่น่าประทับใจให้กับผู้ใช้งานทุกคน
+ผมเป็นนักเรียนระดับชั้นมัธยมศึกษาปีที่ 6 ที่มีความสนใจด้านการพัฒนาเว็บไซต์ การออกแบบ และเทคโนโลยีดิจิทัล
+
+ผมมุ่งมั่นพัฒนาทักษะของตนเองอย่างต่อเนื่อง เพื่อเตรียมความพร้อมสำหรับการศึกษาต่อในระดับมหาวิทยาลัย
 
 </p>
 
-/* ===== Information Cards ===== */
 
+<div class="quote">
 
-.info-section{
+"ทุกความสำเร็จ เริ่มต้นจากการกล้าลงมือทำ และทุกผลงานมีเรื่องราวที่รอให้คุณค้นพบ"
 
-width:90%;
-
-max-width:1200px;
-
-margin:80px auto;
-
-
-display:grid;
-
-grid-template-columns:
-
-repeat(auto-fit,minmax(250px,1fr));
-
-
-gap:25px;
-
-}
+</div>
 
 
 
-.info-card{
+<a href="about.html" class="btn">
 
-background:
+อ่านประวัติของผม
 
-rgba(255,255,255,.06);
-
-
-border:1px solid rgba(255,255,255,.1);
+</a>
 
 
-backdrop-filter:blur(15px);
+<a href="education.html" class="btn btn2">
 
+ดูประวัติการศึกษา
 
-padding:30px;
-
-
-border-radius:25px;
-
-
-transition:.4s;
-
-
-}
+</a>
 
 
 
-.info-card:hover{
-
-transform:translateY(-15px);
+</div>
 
 
-box-shadow:
 
-0 0 35px rgba(56,189,248,.4);
+<div class="profile">
 
 
-border-color:#38bdf8;
+<img src="images/profile.jpg" alt="Profile">
 
+
+</div>
+
+
+
+</section>
+/* ===== Profile Design เพิ่มเติม ===== */
+
+.profile{
+
+position:relative;
+
+animation:fadeProfile 1s ease;
 
 }
 
 
+.profile::before{
 
-.info-card h3{
-
-font-size:25px;
-
-color:#38bdf8;
-
-margin-bottom:15px;
-
-}
-
-
-
-.info-card p{
-
-color:#d1d5db;
-
-line-height:1.8;
-
-}
-
-
-
-/* ===== Stats ===== */
-
-
-.stats{
-
-width:90%;
-
-max-width:1000px;
-
-
-margin:80px auto;
-
-
-display:grid;
-
-
-grid-template-columns:
-
-repeat(auto-fit,minmax(200px,1fr));
-
-
-gap:25px;
-
-
-}
-
-
-
-.stat-box{
-
-text-align:center;
-
-
-padding:35px;
-
-
-border-radius:25px;
-
-
-background:
-
-linear-gradient(
-
-135deg,
-
-rgba(56,189,248,.15),
-
-rgba(139,92,246,.15)
-
-);
-
-
-border:1px solid rgba(255,255,255,.1);
-
-
-transition:.4s;
-
-
-}
-
-
-
-.stat-box:hover{
-
-transform:scale(1.08);
-
-
-box-shadow:
-
-0 0 30px #8b5cf6;
-
-
-}
-
-
-
-.stat-box h1{
-
-font-size:45px;
-
-color:#38bdf8;
-
-}
-
-
-
-.stat-box p{
-
-color:#ddd;
-
-margin-top:10px;
-
-}
-
-
-
-/* ===== Floating Light ===== */
-
-
-.floating{
+content:"";
 
 position:absolute;
 
+width:350px;
+
+height:350px;
+
 border-radius:50%;
 
-filter:blur(2px);
+border:2px solid #38bdf8;
 
-animation:float 5s infinite alternate;
+top:-15px;
+
+left:-15px;
+
+animation:rotateCircle 8s linear infinite;
 
 }
 
 
+.profile::after{
 
-.floating.one{
+content:"";
 
-width:80px;
+position:absolute;
 
-height:80px;
+width:20px;
+
+height:20px;
 
 background:#38bdf8;
 
-opacity:.3;
+border-radius:50%;
 
-top:25%;
+top:20px;
 
-left:8%;
+right:20px;
 
-}
-
-
-
-.floating.two{
-
-width:120px;
-
-height:120px;
-
-background:#8b5cf6;
-
-opacity:.2;
-
-right:10%;
-
-bottom:20%;
-
-}
-
-
-
-@keyframes float{
-
-from{
-
-transform:translateY(0);
-
-}
-
-to{
-
-transform:translateY(-40px);
-
-}
-
-}
-    <!-- Floating Background -->
-
-<div class="floating one"></div>
-
-<div class="floating two"></div>
-
-
-
-
-<!-- About Cards -->
-
-
-<section class="info-section">
-
-
-
-<div class="info-card">
-
-
-<h3>
-
-👨‍💻 About Me
-
-</h3>
-
-
-<p>
-
-นักเรียนระดับชั้นมัธยมศึกษาปีที่ 6 ที่มีความสนใจด้านการพัฒนาเว็บไซต์ การออกแบบ UI และเทคโนโลยีดิจิทัล พร้อมเรียนรู้สิ่งใหม่ ๆ อยู่เสมอ
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="info-card">
-
-
-<h3>
-
-🚀 My Passion
-
-</h3>
-
-
-<p>
-
-ผมสนใจการสร้างเว็บไซต์ที่มีทั้งความสวยงาม ใช้งานง่าย และสามารถสร้างประสบการณ์ที่ดีให้กับผู้ใช้งาน
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="info-card">
-
-
-<h3>
-
-🎯 My Goal
-
-</h3>
-
-
-<p>
-
-เป้าหมายคือการศึกษาต่อในระดับมหาวิทยาลัยด้านเทคโนโลยีสารสนเทศ วิทยาการคอมพิวเตอร์ หรือสาขาที่เกี่ยวข้อง
-
-</p>
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-<!-- Statistics -->
-
-
-<section class="stats">
-
-
-
-<div class="stat-box">
-
-<h1>
-
-3+
-
-</h1>
-
-<p>
-
-ปีแห่งการเรียนรู้เทคโนโลยี
-
-</p>
-
-</div>
-
-
-
-
-<div class="stat-box">
-
-<h1>
-
-10+
-
-</h1>
-
-<p>
-
-ผลงานและกิจกรรม
-
-</p>
-
-</div>
-
-
-
-
-<div class="stat-box">
-
-<h1>
-
-5+
-
-</h1>
-
-<p>
-
-ทักษะด้านดิจิทัล
-
-</p>
-
-</div>
-
-
-
-</section>
-    /* ===== Footer ===== */
-
-
-footer{
-
-margin-top:100px;
-
-padding:50px 20px;
-
-
-text-align:center;
-
-
-background:rgba(0,0,0,.5);
-
-
-border-top:
-
-1px solid rgba(255,255,255,.1);
-
-
-}
-
-
-
-footer h2{
-
-
-font-size:30px;
-
-
-color:#38bdf8;
-
-
-margin-bottom:15px;
-
-
-}
-
-
-
-footer p{
-
-
-color:#94a3b8;
-
-
-line-height:1.8;
-
-
-}
-
-
-
-
-
-/* ===== Scroll Animation ===== */
-
-
-.hero,
-.info-section,
-.stats,
-footer{
-
-
-animation:fadeUp 1s ease;
-
-}
-
-
-
-@keyframes fadeUp{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(50px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-}
-
-
-
-
-
-/* ===== Mobile Responsive ===== */
-
-
-@media(max-width:900px){
-
-
-
-nav{
-
-
-flex-direction:column;
-
-
-padding:20px;
-
-
-}
-
-
-
-nav ul{
-
-
-margin-top:15px;
-
-
-flex-wrap:wrap;
-
-
-justify-content:center;
-
-
-}
-
-
-
-nav ul li{
-
-
-margin:8px;
-
-
-}
-
-
-
-.hero{
-
-
-padding-top:180px;
-
-
-text-align:center;
-
-
-}
-
-
-
-.content h1{
-
-
-font-size:42px;
-
-
-}
-
-
-
-.content h2{
-
-
-font-size:24px;
-
-
-}
-
-
-
-.content p{
-
-
-font-size:15px;
-
-
-}
-
-
-
-.quote{
-
-
-font-size:17px;
-
+box-shadow:0 0 20px #38bdf8;
 
 }
 
@@ -1224,68 +567,125 @@ font-size:17px;
 
 .profile img{
 
+position:relative;
 
-width:250px;
-
-
-height:250px;
-
+z-index:2;
 
 }
 
 
 
-.btn-area{
+@keyframes rotateCircle{
 
+from{
 
-justify-content:center;
+transform:rotate(0deg);
 
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
 
 }
 
 
 
-.info-card{
+@keyframes fadeProfile{
 
+from{
 
-text-align:center;
+opacity:0;
 
+transform:translateX(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
 
 }
 
 
 
+/* ===== ปรับ Hero ให้ดูมีมิติ ===== */
+
+
+.hero{
+
+background:
+
+radial-gradient(
+
+circle at top right,
+
+rgba(56,189,248,.15),
+
+transparent 40%
+
+);
+
 }
 
-<footer>
 
 
-<h2>
-
-MY PORTFOLIO
-
-</h2>
+/* ===== ปุ่มสวยขึ้น ===== */
 
 
-<p>
+.btn{
 
-นายสุทธิภัทร พรมราช
+box-shadow:
 
-</p>
+0 5px 20px rgba(56,189,248,.25);
 
-
-<p>
-
-Web Developer & Designer
-
-</p>
+}
 
 
-<p>
 
-Portfolio สำหรับใช้ประกอบการสมัครเข้าศึกษาต่อระดับมหาวิทยาลัย
+.btn:hover{
 
-</p>
+letter-spacing:1px;
+
+}
 
 
-</footer>
+
+/* ===== Navbar เพิ่มความสวย ===== */
+
+
+nav{
+
+box-shadow:
+
+0 5px 25px rgba(0,0,0,.4);
+
+}
+
+
+
+/* ===== มือถือ ===== */
+
+
+@media(max-width:768px){
+
+
+.profile::before{
+
+width:270px;
+
+height:270px;
+
+}
+
+
+}
+    <div class="profile">
+
+<img src="images/profile.jpg" alt="Profile">
