@@ -32,7 +32,7 @@ text-align:center;
 
 background:
 
-radial-gradient(circle at top,#3b82f6,#172554,#020617);
+radial-gradient(circle at top,#2563eb,#172554,#020617);
 
 overflow-x:hidden;
 
@@ -42,32 +42,34 @@ overflow-x:hidden;
 
 /* ✨ แสงเวทมนตร์ */
 
-.magic-light{
+.magic{
 
 position:fixed;
 
-width:450px;
+width:500px;
 
-height:450px;
+height:500px;
 
-background:gold;
+background:#ffd700;
 
 border-radius:50%;
 
-filter:blur(150px);
+filter:blur(180px);
 
 opacity:.18;
 
-top:50px;
+top:0;
 
-left:50px;
+left:20%;
 
-animation:lightMove 8s infinite;
+animation:magicMove 8s infinite;
+
+z-index:0;
 
 }
 
 
-@keyframes lightMove{
+@keyframes magicMove{
 
 50%{
 
@@ -79,93 +81,133 @@ transform:translate(200px,100px);
 
 
 
-/* 🐉 มังกรผู้พิทักษ์ */
+/* 🌹 กลีบกุหลาบ */
 
-.dragon-guardian{
+.rose-petals{
 
 position:fixed;
 
-right:40px;
+top:0;
 
-top:170px;
+left:0;
 
-width:300px;
+width:100%;
 
-height:300px;
+height:100%;
 
-opacity:.35;
+overflow:hidden;
 
-z-index:0;
+pointer-events:none;
 
-animation:dragonFloat 6s infinite;
-
-}
-
-
-
-/* เงามังกร */
-
-.dragon-body{
-
-width:260px;
-
-height:170px;
-
-background:
-
-radial-gradient(
-
-ellipse,
-
-gold,
-
-transparent 70%
-
-);
-
-border-radius:50%;
-
-filter:blur(20px);
+z-index:1;
 
 }
 
 
-
-.dragon-eye{
+.rose-petals span{
 
 position:absolute;
 
-top:90px;
+top:-60px;
 
-left:130px;
+font-size:30px;
 
-width:25px;
+filter:
 
-height:25px;
+drop-shadow(0 0 10px red);
 
-background:white;
-
-border-radius:50%;
-
-box-shadow:
-
-0 0 20px gold,
-
-0 0 50px orange;
+animation:roseFall 12s infinite linear;
 
 }
 
 
 
-@keyframes dragonFloat{
+.rose-petals span:nth-child(1){
 
-50%{
+left:10%;
 
-transform:translateY(-40px);
+animation-delay:0s;
+
+}
+
+.rose-petals span:nth-child(2){
+
+left:25%;
+
+animation-delay:3s;
+
+}
+
+.rose-petals span:nth-child(3){
+
+left:40%;
+
+animation-delay:6s;
+
+}
+
+.rose-petals span:nth-child(4){
+
+left:55%;
+
+animation-delay:1s;
+
+}
+
+.rose-petals span:nth-child(5){
+
+left:70%;
+
+animation-delay:5s;
+
+}
+
+.rose-petals span:nth-child(6){
+
+left:85%;
+
+animation-delay:8s;
+
+}
+
+
+
+@keyframes roseFall{
+
+0%{
+
+transform:
+
+translateY(-50px)
+
+rotate(0deg);
+
+opacity:0;
+
+}
+
+
+20%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:
+
+translateY(110vh)
+
+rotate(360deg);
+
+opacity:0;
 
 }
 
 }
+
 
 
 
@@ -190,6 +232,7 @@ z-index:2;
 }
 
 
+
 .subtitle{
 
 font-size:22px;
@@ -204,8 +247,7 @@ z-index:2;
 
 
 
-/* กล่อง Profile */
-
+/* กล่องประวัติ */
 
 .profile{
 
@@ -273,8 +315,7 @@ color:#ffd700;
 
 
 
-/* Status */
-
+/* สถานะ */
 
 .status{
 
@@ -306,7 +347,7 @@ linear-gradient(
 
 padding:25px;
 
-border:2px solid gold;
+border:2px solid #d4af37;
 
 border-radius:15px;
 
@@ -328,7 +369,6 @@ color:#ffd700;
 
 
 /* คัมภีร์ */
-
 
 .scroll{
 
@@ -364,7 +404,6 @@ line-height:1.8;
 
 /* ปุ่ม */
 
-
 .button{
 
 display:inline-block;
@@ -393,7 +432,9 @@ border-radius:12px;
 
 border:3px solid white;
 
-box-shadow:0 0 30px gold;
+box-shadow:
+
+0 0 30px gold;
 
 }
 
@@ -415,16 +456,26 @@ transform:scale(1.1);
 <body>
 
 
-<div class="magic-light"></div>
+<div class="magic"></div>
 
 
-<div class="dragon-guardian">
 
-<div class="dragon-body"></div>
+<div class="rose-petals">
 
-<div class="dragon-eye"></div>
+<span>🌹</span>
+
+<span>🌹</span>
+
+<span>🌹</span>
+
+<span>🌹</span>
+
+<span>🌹</span>
+
+<span>🌹</span>
 
 </div>
+
 
 
 
@@ -435,6 +486,7 @@ transform:scale(1.1);
 </h1>
 
 
+
 <p class="subtitle">
 
 "ข้อมูลของอัศวินผู้เริ่มต้นการเดินทาง"
@@ -443,10 +495,11 @@ transform:scale(1.1);
 
 
 
+
 <div class="profile">
 
 
-<img src="images/per.jpg">
+<img src="images/per.jpg" alt="Profile">
 
 
 
@@ -463,6 +516,7 @@ transform:scale(1.1);
 🛡️ Rank : Student Knight
 
 </p>
+
 
 
 
@@ -491,6 +545,7 @@ School : โรงเรียนพานทอง
 
 
 
+
 <div class="box">
 
 <h3>⚔️ Ability</h3>
@@ -516,9 +571,11 @@ School : โรงเรียนพานทอง
 
 
 
+
 <div class="scroll">
 
 <h3>📜 Character Story</h3>
+
 
 ชื่อ : สุทธิภัทร พรมราช
 
@@ -538,13 +595,16 @@ School : โรงเรียนพานทอง
 
 โรงเรียนพานทอง
 
+
 </div>
+
 
 
 
 <div class="scroll">
 
 <h3>🌟 Quest Of Life</h3>
+
 
 ความใฝ่ฝัน :
 
@@ -553,6 +613,7 @@ School : โรงเรียนพานทอง
 ใช้ชีวิตอย่างมีความสุข
 
 และไม่เครียด
+
 
 <br><br>
 
@@ -564,10 +625,13 @@ School : โรงเรียนพานทอง
 
 พร้อมเรียนรู้สิ่งใหม่
 
+
 </div>
 
 
+
 </div>
+
 
 
 
