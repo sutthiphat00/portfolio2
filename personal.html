@@ -32,134 +32,144 @@ text-align:center;
 
 background:
 
-radial-gradient(circle at top,#2563eb,#172554,#020617);
+radial-gradient(circle at top,#3b82f6,#172554,#020617);
 
 overflow-x:hidden;
 
 }
 
 
-/* แสงเวทมนตร์ */
 
-body::before{
+/* ✨ แสงเวทมนตร์ */
 
-content:"";
+.magic-light{
 
 position:fixed;
 
-width:500px;
+width:450px;
 
-height:500px;
+height:450px;
 
 background:gold;
 
 border-radius:50%;
 
-filter:blur(180px);
+filter:blur(150px);
 
-opacity:.15;
+opacity:.18;
 
-top:10%;
+top:50px;
 
-left:20%;
+left:50px;
+
+animation:lightMove 8s infinite;
+
+}
+
+
+@keyframes lightMove{
+
+50%{
+
+transform:translate(200px,100px);
+
+}
 
 }
 
 
 
-/* 🐉 มังกรทองบิน */
+/* 🐉 มังกรผู้พิทักษ์ */
 
-.gold-dragon{
+.dragon-guardian{
 
 position:fixed;
 
-top:120px;
+right:40px;
 
-right:-500px;
+top:170px;
 
-width:450px;
+width:300px;
 
-z-index:1;
+height:300px;
 
-pointer-events:none;
+opacity:.35;
 
-animation:dragonFly 18s infinite linear;
+z-index:0;
 
-}
-
-
-
-.gold-dragon img{
-
-width:100%;
-
-filter:
-
-drop-shadow(0 0 25px gold)
-
-drop-shadow(0 0 80px orange);
+animation:dragonFloat 6s infinite;
 
 }
 
 
 
-@keyframes dragonFly{
+/* เงามังกร */
 
+.dragon-body{
 
-0%{
+width:260px;
 
-right:-500px;
+height:170px;
 
-transform:translateY(0) rotate(5deg);
+background:
 
-opacity:0;
+radial-gradient(
 
-}
+ellipse,
 
+gold,
 
-10%{
+transparent 70%
 
-opacity:1;
+);
 
-}
+border-radius:50%;
 
-
-30%{
-
-transform:translateY(-80px) rotate(-5deg);
-
-}
-
-
-60%{
-
-transform:translateY(60px) rotate(5deg);
+filter:blur(20px);
 
 }
 
 
-90%{
 
-opacity:1;
+.dragon-eye{
+
+position:absolute;
+
+top:90px;
+
+left:130px;
+
+width:25px;
+
+height:25px;
+
+background:white;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 20px gold,
+
+0 0 50px orange;
 
 }
 
 
-100%{
 
-right:110%;
+@keyframes dragonFloat{
 
-opacity:0;
+50%{
+
+transform:translateY(-40px);
 
 }
-
 
 }
 
 
 
 /* หัวข้อ */
-
 
 h1{
 
@@ -171,16 +181,13 @@ color:#ffd700;
 
 text-shadow:
 
-0 0 15px gold,
-
-0 0 40px orange;
+0 0 20px gold;
 
 position:relative;
 
 z-index:2;
 
 }
-
 
 
 .subtitle{
@@ -197,7 +204,7 @@ z-index:2;
 
 
 
-/* กล่องหลัก */
+/* กล่อง Profile */
 
 
 .profile{
@@ -214,13 +221,13 @@ background:
 
 rgba(15,23,42,.85);
 
-border:3px solid #ffd700;
+border:3px solid gold;
 
 border-radius:25px;
 
 box-shadow:
 
-0 0 40px #000,
+0 0 40px black,
 
 0 0 30px gold;
 
@@ -233,7 +240,6 @@ z-index:2;
 
 
 /* รูป */
-
 
 .profile img{
 
@@ -249,7 +255,7 @@ border:8px solid gold;
 
 box-shadow:
 
-0 0 50px gold;
+0 0 40px gold;
 
 }
 
@@ -259,7 +265,7 @@ box-shadow:
 
 font-family:'Cinzel';
 
-font-size:40px;
+font-size:38px;
 
 color:#ffd700;
 
@@ -267,7 +273,7 @@ color:#ffd700;
 
 
 
-/* สถานะ */
+/* Status */
 
 
 .status{
@@ -292,7 +298,7 @@ linear-gradient(
 
 135deg,
 
-#1e293b,
+#1e3a8a,
 
 #020617
 
@@ -300,7 +306,7 @@ linear-gradient(
 
 padding:25px;
 
-border:2px solid #d4af37;
+border:2px solid gold;
 
 border-radius:15px;
 
@@ -308,10 +314,9 @@ text-align:left;
 
 box-shadow:
 
-0 0 20px rgba(212,175,55,.5);
+0 0 20px rgba(255,215,0,.4);
 
 }
-
 
 
 .box h3{
@@ -337,7 +342,7 @@ linear-gradient(
 
 135deg,
 
-#fff1b8,
+#fff3c4,
 
 #d4af37
 
@@ -366,7 +371,7 @@ display:inline-block;
 
 margin:30px 10px;
 
-padding:18px 45px;
+padding:18px 40px;
 
 background:
 
@@ -374,26 +379,23 @@ linear-gradient(
 
 #ffd700,
 
-#b8860b
+#8b7500
 
 );
 
-color:#000;
+color:black;
 
 font-weight:bold;
 
 text-decoration:none;
 
-border-radius:15px;
+border-radius:12px;
 
 border:3px solid white;
 
-box-shadow:
-
-0 0 30px gold;
+box-shadow:0 0 30px gold;
 
 }
-
 
 
 .button:hover{
@@ -403,22 +405,26 @@ transform:scale(1.1);
 }
 
 
+
 </style>
 
 </head>
 
 
+
 <body>
 
 
-<!-- มังกรทอง -->
+<div class="magic-light"></div>
 
-<div class="gold-dragon">
 
-<img src="images/gold-dragon.png" alt="Golden Dragon">
+<div class="dragon-guardian">
+
+<div class="dragon-body"></div>
+
+<div class="dragon-eye"></div>
 
 </div>
-
 
 
 
@@ -429,7 +435,6 @@ transform:scale(1.1);
 </h1>
 
 
-
 <p class="subtitle">
 
 "ข้อมูลของอัศวินผู้เริ่มต้นการเดินทาง"
@@ -438,11 +443,10 @@ transform:scale(1.1);
 
 
 
-
 <div class="profile">
 
 
-<img src="images/per.jpg" alt="Profile">
+<img src="images/per.jpg">
 
 
 
@@ -487,7 +491,6 @@ School : โรงเรียนพานทอง
 
 
 
-
 <div class="box">
 
 <h3>⚔️ Ability</h3>
@@ -513,15 +516,9 @@ School : โรงเรียนพานทอง
 
 
 
-
 <div class="scroll">
 
-<h3>
-
-📜 Character Story
-
-</h3>
-
+<h3>📜 Character Story</h3>
 
 ชื่อ : สุทธิภัทร พรมราช
 
@@ -541,20 +538,13 @@ School : โรงเรียนพานทอง
 
 โรงเรียนพานทอง
 
-
 </div>
 
 
 
 <div class="scroll">
 
-
-<h3>
-
-🌟 Quest Of Life
-
-</h3>
-
+<h3>🌟 Quest Of Life</h3>
 
 ความใฝ่ฝัน :
 
@@ -564,9 +554,7 @@ School : โรงเรียนพานทอง
 
 และไม่เครียด
 
-
 <br><br>
-
 
 จุดเด่น :
 
@@ -576,9 +564,7 @@ School : โรงเรียนพานทอง
 
 พร้อมเรียนรู้สิ่งใหม่
 
-
 </div>
-
 
 
 </div>
@@ -592,10 +578,9 @@ School : โรงเรียนพานทอง
 </a>
 
 
-
 <a class="button" href="education.html">
 
-🛡️ TRAINING PATH
+🛡️ EDUCATION PATH
 
 </a>
 
@@ -604,4 +589,3 @@ School : โรงเรียนพานทอง
 </body>
 
 </html>
-
