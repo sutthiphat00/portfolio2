@@ -1,2 +1,587 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SUTTHIPHAT ROYAL KNIGHT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    font-family:'Sarabun',sans-serif;
+
+    color:white;
+
+    text-align:center;
+
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    #020617,
+
+    #172554,
+
+    #000
+
+    );
+
+
+    overflow-x:hidden;
+
+}
+
+
+
+/* ไฟเวทมนตร์ */
+
+.fire{
+
+    position:fixed;
+
+    width:12px;
+
+    height:12px;
+
+    background:#ffcc33;
+
+    border-radius:50%;
+
+
+    box-shadow:
+
+    0 0 20px orange;
+
+
+    animation:fireMove 8s infinite;
+
+}
+
+
+
+@keyframes fireMove{
+
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+
+50%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:translateY(-100vh);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+/* ส่วนหัว */
+
+header{
+
+
+padding:40px 20px;
+
+
+background:
+
+rgba(0,0,0,.5);
+
+
+border-bottom:
+
+3px solid #d4af37;
+
+
+}
+
+
+
+h1{
+
+
+font-family:'Cinzel',serif;
+
+
+font-size:50px;
+
+
+color:#d4af37;
+
+
+text-shadow:
+
+
+0 0 10px gold,
+
+0 0 30px #8b7500;
+
+
+}
+
+
+
+.subtitle{
+
+
+font-size:22px;
+
+color:#ddd;
+
+}
+
+
+
+/* เมนู */
+
+
+nav{
+
+
+margin-top:30px;
+
+
+}
+
+
+
+nav a{
+
+
+display:inline-block;
+
+
+margin:8px;
+
+
+padding:14px 25px;
+
+
+background:#111827;
+
+
+color:#d4af37;
+
+
+border:2px solid #d4af37;
+
+
+border-radius:10px;
+
+
+text-decoration:none;
+
+
+font-weight:bold;
+
+
+}
+
+
+
+nav a:hover{
+
+
+background:#d4af37;
+
+
+color:black;
+
+
+}
+
+
+
+/* รูป */
+
+.hero{
+
+
+margin-top:40px;
+
+
+}
+
+
+
+.hero img{
+
+
+width:230px;
+
+
+height:230px;
+
+
+border-radius:50%;
+
+
+object-fit:cover;
+
+
+border:8px solid #d4af37;
+
+
+box-shadow:
+
+0 0 40px gold;
+
+
+}
+
+
+
+/* กล่องสถานะ */
+
+
+.status{
+
+
+width:85%;
+
+max-width:650px;
+
+
+margin:30px auto;
+
+
+padding:30px;
+
+
+background:
+
+rgba(0,0,0,.7);
+
+
+border:3px solid #d4af37;
+
+
+border-radius:15px;
+
+
+box-shadow:
+
+0 0 30px black;
+
+
+}
+
+
+
+.status h2{
+
+
+color:#d4af37;
+
+
+font-family:'Cinzel';
+
+
+}
+
+
+
+.info{
+
+
+font-size:20px;
+
+
+line-height:2;
+
+
+}
+
+
+
+/* ปุ่มเริ่ม */
+
+
+.start{
+
+
+display:inline-block;
+
+
+margin:30px;
+
+
+padding:20px 50px;
+
+
+background:
+
+linear-gradient(
+
+#d4af37,
+
+#8b7500
+
+);
+
+
+color:black;
+
+
+font-size:20px;
+
+
+font-weight:bold;
+
+
+text-decoration:none;
+
+
+border-radius:12px;
+
+
+border:3px solid white;
+
+
+box-shadow:
+
+0 0 30px gold;
+
+
+animation:glow 2s infinite;
+
+
+}
+
+
+
+@keyframes glow{
+
+
+50%{
+
+box-shadow:
+
+0 0 50px gold;
+
+}
+
+
+}
+
+
+
+.start:hover{
+
+
+transform:scale(1.1);
+
+
+}
+
+
+
+footer{
+
+
+padding:20px;
+
+
+margin-top:40px;
+
+
+background:#020617;
+
+
+border-top:
+
+2px solid #d4af37;
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<!-- เอฟเฟกต์ไฟ -->
+
+<div class="fire" style="left:20%;"></div>
+
+<div class="fire" style="left:50%;animation-delay:2s;"></div>
+
+<div class="fire" style="left:80%;animation-delay:4s;"></div>
+
+
+
+
+<header>
+
+
+<h1>
+⚔️ SUTTHIPHAT ROYAL KNIGHT ⚔️
+</h1>
+
+
+<p class="subtitle">
+
+🛡️ Chronicle of The Brave Guardian
+
+</p>
+
+
+
+<nav>
+
+<a href="personal.html">
+⚔️ Knight Profile
+</a>
+
+
+<a href="education.html">
+📜 Training Path
+</a>
+
+
+<a href="activities.html">
+🏆 Honor Hall
+</a>
+
+
+<a href="skills.html">
+🛡️ Knight Skills
+</a>
+
+
+<a href="contact.html">
+📡 Contact
+</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+<div class="hero">
+
+
+
+<img src="images/per.jpg" alt="Knight">
+
+
+
+<div class="status">
+
+
+<h2>
+🛡️ KNIGHT STATUS
+</h2>
+
+
+
+<div class="info">
+
+
+👤 Name : สุทธิภัทร พรมราช
+
+<br>
+
+
+⭐ Level : 18
+
+<br>
+
+
+⚔️ Rank : Student Knight
+
+<br>
+
+
+🎤 Ability : Singing
+
+<br>
+
+
+🎨 Talent : Art & Cooking
+
+<br>
+
+
+🌟 Dream : Peaceful Life
+
+
+</div>
+
+
+</div>
+
+
+
+<a class="start" href="personal.html">
+
+⚔️ START JOURNEY ⚔️
+
+</a>
+
+
+
+</div>
+
+
+
+
+<footer>
+
+SUTTHIPHAT ROYAL KNIGHT © 2026
+
+</footer>
+
+
+
+</body>
+
+</html>
+
 
 
