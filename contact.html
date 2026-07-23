@@ -1,1 +1,658 @@
+<!DOCTYPE html>
+<html lang="th">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SUTTHIPHAT ROYAL KNIGHT - Final Contact</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+
+body{
+
+min-height:100vh;
+
+font-family:'Sarabun',sans-serif;
+
+color:white;
+
+text-align:center;
+
+overflow:hidden;
+
+background:
+
+radial-gradient(circle at top,#312e81,#020617,#000);
+
+}
+
+
+
+
+/* แสงจบเกม */
+
+.final-light{
+
+position:fixed;
+
+width:600px;
+
+height:600px;
+
+background:#ffd700;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+opacity:.25;
+
+top:-150px;
+
+left:20%;
+
+animation:lightMove 8s infinite alternate;
+
+}
+
+
+@keyframes lightMove{
+
+100%{
+
+transform:translate(200px,100px);
+
+}
+
+}
+
+
+
+
+
+/* พลุ */
+
+.fireworks{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+
+
+.fireworks span{
+
+position:absolute;
+
+font-size:45px;
+
+animation:firework 4s infinite;
+
+}
+
+
+
+.fireworks span:nth-child(1){
+
+left:15%;
+
+top:20%;
+
+}
+
+
+.fireworks span:nth-child(2){
+
+left:40%;
+
+top:35%;
+
+animation-delay:1s;
+
+}
+
+
+.fireworks span:nth-child(3){
+
+left:70%;
+
+top:15%;
+
+animation-delay:2s;
+
+}
+
+
+.fireworks span:nth-child(4){
+
+left:85%;
+
+top:45%;
+
+animation-delay:3s;
+
+}
+
+
+.fireworks span:nth-child(5){
+
+left:50%;
+
+top:10%;
+
+animation-delay:1.5s;
+
+}
+
+
+
+@keyframes firework{
+
+0%{
+
+transform:scale(0);
+
+opacity:0;
+
+}
+
+
+40%{
+
+transform:scale(1.5);
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:scale(.5);
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+/* ดาว */
+
+.stars{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+}
+
+
+
+.stars span{
+
+position:absolute;
+
+color:white;
+
+animation:twinkle 2s infinite alternate;
+
+}
+
+
+@keyframes twinkle{
+
+from{
+
+opacity:.3;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+
+
+
+h1{
+
+margin-top:45px;
+
+font-family:'Cinzel';
+
+font-size:48px;
+
+color:#ffe27a;
+
+text-shadow:
+
+0 0 25px gold,
+
+0 0 50px orange;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+
+.subtitle{
+
+font-size:22px;
+
+color:#fff4c2;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+
+
+.container{
+
+width:85%;
+
+max-width:850px;
+
+margin:40px auto;
+
+padding:40px;
+
+background:
+
+rgba(15,23,42,.85);
+
+border:3px solid gold;
+
+border-radius:30px;
+
+box-shadow:
+
+0 0 50px black,
+
+0 0 40px gold;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+
+.profile-img{
+
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:8px solid gold;
+
+box-shadow:0 0 40px gold;
+
+}
+
+
+
+
+.name{
+
+font-family:'Cinzel';
+
+font-size:38px;
+
+color:#ffe27a;
+
+margin:20px;
+
+}
+
+
+
+
+.contact-box{
+
+margin:20px 0;
+
+padding:25px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#1e1b4b,
+
+#020617
+
+);
+
+border:2px solid gold;
+
+border-radius:20px;
+
+box-shadow:0 0 25px rgba(255,215,0,.5);
+
+font-size:22px;
+
+}
+
+
+
+.contact-box h3{
+
+color:#ffe27a;
+
+margin-bottom:10px;
+
+}
+
+
+
+
+.button{
+
+display:inline-block;
+
+margin:15px 8px;
+
+padding:17px 30px;
+
+background:
+
+linear-gradient(
+
+gold,
+
+#9a6b00
+
+);
+
+color:#211400;
+
+font-weight:bold;
+
+text-decoration:none;
+
+border-radius:12px;
+
+border:3px solid white;
+
+box-shadow:0 0 30px gold;
+
+}
+
+
+
+.button:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="final-light"></div>
+
+
+
+<div class="fireworks">
+
+<span>🎆</span>
+
+<span>🎇</span>
+
+<span>🎆</span>
+
+<span>🎇</span>
+
+<span>✨</span>
+
+</div>
+
+
+
+
+
+<div class="stars">
+
+<span style="left:10%;top:20%">⭐</span>
+
+<span style="left:80%;top:15%">✨</span>
+
+<span style="left:30%;top:70%">⭐</span>
+
+<span style="left:65%;top:80%">✨</span>
+
+</div>
+
+
+
+
+
+
+<h1>
+
+🏆 FINAL CHAPTER : CONTACT 🏆
+
+</h1>
+
+
+<p class="subtitle">
+
+"การเดินทางของอัศวินแห่งการเรียนรู้ได้สำเร็จลง"
+
+</p>
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+<img src="images/per.jpg" class="profile-img">
+
+
+
+<h2 class="name">
+
+สุทธิภัทร พรมราช
+
+</h2>
+
+
+
+<p>
+
+👑 The End Of Journey
+
+</p>
+
+
+
+
+
+
+
+<div class="contact-box">
+
+<h3>📧 Email</h3>
+
+<p>
+
+neslele31@gmail.com
+
+</p>
+
+</div>
+
+
+
+
+
+
+<div class="contact-box">
+
+<h3>📘 Facebook</h3>
+
+<p>
+
+สุทธิภัทร
+
+</p>
+
+</div>
+
+
+
+
+
+
+
+<div class="contact-box">
+
+<h3>📷 Instagram</h3>
+
+<p>
+
+สุทธิภัทร พรมราช
+
+</p>
+
+</div>
+
+
+
+
+
+
+
+<h2 style="color:#ffe27a;margin-top:30px;">
+
+🎉 THANK YOU 🎉
+
+</h2>
+
+
+<p>
+
+ขอบคุณที่ร่วมเดินทางไปกับ Royal Knight
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<a href="index.html" class="button">
+
+🏠 HOME
+
+</a>
+
+
+<a href="profile.html" class="button">
+
+👤 PROFILE
+
+</a>
+
+
+<a href="education.html" class="button">
+
+🎓 EDUCATION
+
+</a>
+
+
+<a href="activities.html" class="button">
+
+🏆 ACTIVITIES
+
+</a>
+
+
+<a href="skills.html" class="button">
+
+✨ SKILLS
+
+</a>
+
+
+<a href="certificates.html" class="button">
+
+🏅 CERTIFICATES
+
+</a>
+
+
+
+</body>
+
+</html>
