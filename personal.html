@@ -10,17 +10,16 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
 
-
 <style>
 
 *{
 box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 
 body{
-
-margin:0;
 
 min-height:100vh;
 
@@ -40,7 +39,7 @@ overflow-x:hidden;
 
 
 
-/* ✨ แสงเวทมนตร์ */
+/* แสงเวทมนตร์ */
 
 .magic{
 
@@ -56,13 +55,13 @@ border-radius:50%;
 
 filter:blur(180px);
 
-opacity:.18;
+opacity:.2;
 
 top:0;
 
 left:20%;
 
-animation:magicMove 8s infinite;
+animation:magicMove 8s infinite alternate;
 
 z-index:0;
 
@@ -71,7 +70,7 @@ z-index:0;
 
 @keyframes magicMove{
 
-50%{
+100%{
 
 transform:translate(200px,100px);
 
@@ -81,15 +80,12 @@ transform:translate(200px,100px);
 
 
 
-/* 🌹 กลีบกุหลาบ */
 
-.rose-petals{
+/* กลีบดอกไม้ */
+
+.petals{
 
 position:fixed;
-
-top:0;
-
-left:0;
 
 width:100%;
 
@@ -104,83 +100,61 @@ z-index:1;
 }
 
 
-.rose-petals span{
+.petals span{
 
 position:absolute;
 
-top:-60px;
+top:-50px;
 
-font-size:30px;
+font-size:35px;
 
-filter:
-
-drop-shadow(0 0 10px red);
-
-animation:roseFall 12s infinite linear;
+animation:fall 12s infinite linear;
 
 }
 
 
 
-.rose-petals span:nth-child(1){
+.petals span:nth-child(1){left:10%;}
 
-left:10%;
+.petals span:nth-child(2){
 
-animation-delay:0s;
-
-}
-
-.rose-petals span:nth-child(2){
-
-left:25%;
+left:30%;
 
 animation-delay:3s;
 
 }
 
-.rose-petals span:nth-child(3){
+.petals span:nth-child(3){
 
-left:40%;
-
-animation-delay:6s;
-
-}
-
-.rose-petals span:nth-child(4){
-
-left:55%;
-
-animation-delay:1s;
-
-}
-
-.rose-petals span:nth-child(5){
-
-left:70%;
+left:50%;
 
 animation-delay:5s;
 
 }
 
-.rose-petals span:nth-child(6){
+.petals span:nth-child(4){
+
+left:70%;
+
+animation-delay:2s;
+
+}
+
+.petals span:nth-child(5){
 
 left:85%;
 
-animation-delay:8s;
+animation-delay:7s;
 
 }
 
 
 
-@keyframes roseFall{
+@keyframes fall{
 
 0%{
 
-transform:
-
-translateY(-50px)
-
-rotate(0deg);
+transform:translateY(-50px) rotate(0);
 
 opacity:0;
 
@@ -196,11 +170,7 @@ opacity:1;
 
 100%{
 
-transform:
-
-translateY(110vh)
-
-rotate(360deg);
+transform:translateY(110vh) rotate(360deg);
 
 opacity:0;
 
@@ -211,9 +181,9 @@ opacity:0;
 
 
 
-/* หัวข้อ */
-
 h1{
+
+margin-top:40px;
 
 font-family:'Cinzel';
 
@@ -221,9 +191,7 @@ font-size:48px;
 
 color:#ffd700;
 
-text-shadow:
-
-0 0 20px gold;
+text-shadow:0 0 20px gold;
 
 position:relative;
 
@@ -237,8 +205,6 @@ z-index:2;
 
 font-size:22px;
 
-color:#eee;
-
 position:relative;
 
 z-index:2;
@@ -247,7 +213,6 @@ z-index:2;
 
 
 
-/* กล่องประวัติ */
 
 .profile{
 
@@ -259,9 +224,7 @@ margin:40px auto;
 
 padding:35px;
 
-background:
-
-rgba(15,23,42,.85);
+background:rgba(15,23,42,.85);
 
 border:3px solid gold;
 
@@ -281,8 +244,6 @@ z-index:2;
 
 
 
-/* รูป */
-
 .profile img{
 
 width:240px;
@@ -295,11 +256,10 @@ object-fit:cover;
 
 border:8px solid gold;
 
-box-shadow:
-
-0 0 40px gold;
+box-shadow:0 0 40px gold;
 
 }
+
 
 
 
@@ -311,11 +271,13 @@ font-size:38px;
 
 color:#ffd700;
 
+margin:20px;
+
 }
 
 
 
-/* สถานะ */
+
 
 .status{
 
@@ -333,6 +295,8 @@ margin-top:30px;
 
 .box{
 
+padding:25px;
+
 background:
 
 linear-gradient(
@@ -345,17 +309,13 @@ linear-gradient(
 
 );
 
-padding:25px;
-
-border:2px solid #d4af37;
+border:2px solid gold;
 
 border-radius:15px;
 
 text-align:left;
 
-box-shadow:
-
-0 0 20px rgba(255,215,0,.4);
+box-shadow:0 0 20px rgba(255,215,0,.4);
 
 }
 
@@ -368,7 +328,6 @@ color:#ffd700;
 
 
 
-/* คัมภีร์ */
 
 .scroll{
 
@@ -402,21 +361,21 @@ line-height:1.8;
 
 
 
-/* ปุ่ม */
+
 
 .button{
 
 display:inline-block;
 
-margin:30px 10px;
+margin:25px 8px;
 
-padding:18px 40px;
+padding:18px 35px;
 
 background:
 
 linear-gradient(
 
-#ffd700,
+gold,
 
 #8b7500
 
@@ -432,16 +391,35 @@ border-radius:12px;
 
 border:3px solid white;
 
-box-shadow:
-
-0 0 30px gold;
+box-shadow:0 0 30px gold;
 
 }
+
 
 
 .button:hover{
 
 transform:scale(1.1);
+
+}
+
+
+
+
+@media(max-width:700px){
+
+.status{
+
+grid-template-columns:1fr;
+
+}
+
+
+h1{
+
+font-size:30px;
+
+}
 
 }
 
@@ -456,21 +434,19 @@ transform:scale(1.1);
 <body>
 
 
+
 <div class="magic"></div>
 
 
-<div class="snow-crystals">
+<div class="petals">
 
-<span>❄</span>
-<span>❄</span>
-<span>❄</span>
-<span>❄</span>
-<span>❄</span>
-<span>❄</span>
-<span>❄</span>
+<span>🌹</span>
+<span>🌹</span>
+<span>🌹</span>
+<span>🌹</span>
+<span>🌹</span>
 
 </div>
-
 
 
 
@@ -495,8 +471,7 @@ transform:scale(1.1);
 <div class="profile">
 
 
-<img src="images/per.jpg" alt="Profile">
-
+<img src="images/per.jpg">
 
 
 <h2 class="name">
@@ -504,7 +479,6 @@ transform:scale(1.1);
 สุทธิภัทร พรมราช
 
 </h2>
-
 
 
 <p>
@@ -527,7 +501,7 @@ Level : 18
 
 <br>
 
-Class : Student (นักเรียน)
+Class : Student
 
 <br>
 
@@ -572,6 +546,7 @@ School : โรงเรียนพานทอง
 
 <h3>📜 Character Story</h3>
 
+<br>
 
 ชื่อ : สุทธิภัทร พรมราช
 
@@ -581,16 +556,11 @@ School : โรงเรียนพานทอง
 
 <br><br>
 
-อายุ : 18 ปี
-
-<br><br>
-
 กำลังศึกษาอยู่ระดับชั้นมัธยมศึกษาปีที่ 6
 
 <br>
 
 โรงเรียนพานทอง
-
 
 </div>
 
@@ -601,27 +571,22 @@ School : โรงเรียนพานทอง
 
 <h3>🌟 Quest Of Life</h3>
 
+<br>
 
 ความใฝ่ฝัน :
 
-<br>
-
 ใช้ชีวิตอย่างมีความสุข
 
-และไม่เครียด
-
+และพัฒนาตัวเองอยู่เสมอ
 
 <br><br>
 
 จุดเด่น :
 
-<br>
-
 เป็นคนมีความคิดสร้างสรรค์
 
 พร้อมเรียนรู้สิ่งใหม่
 
-
 </div>
 
 
@@ -631,32 +596,52 @@ School : โรงเรียนพานทอง
 
 
 
-<a class="button" href="index.html">
 
-🗡️ BACK TO JOURNEY
+<a href="index.html" class="button">
+
+🏠 HOME
+
+</a>
+
+
+<a href="education.html" class="button">
+
+🎓 EDUCATION
 
 </a>
 
 
-<a class="button" href="education.html">
+<a href="activities.html" class="button">
 
-🛡️ EDUCATION PATH
+🏆 ACTIVITIES
 
 </a>
+
+
+<a href="skills.html" class="button">
+
+✨ SKILLS
+
+</a>
+
+
+<a href="certificates.html" class="button">
+
+🏅 CERTIFICATES
+
+</a>
+
+
+<a href="contact.html" class="button">
+
+📜 CONTACT
+
+</a>
+
 
 
 
 </body>
 
-<a href="index.html" class="button">🏠 HOME</a>
+</html>
 
-
-
-<a href="education.html" class="button">🎓 EDUCATION</a>
-
-<a href="activities.html" class="button">🏆 ACTIVITIES</a>
-
-<a href="skills.html" class="button">✨ SKILLS</a>
-
-<a href="contact.html" class="button">📜 CONTACT</a>
-<a href="certificates.html" class="button">✨ CONTACT</a>
