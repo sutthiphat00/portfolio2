@@ -1,1 +1,681 @@
+<!DOCTYPE html>
+<html lang="th">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SUTTHIPHAT ROYAL KNIGHT - Certificates</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+
+body{
+
+min-height:100vh;
+
+font-family:'Sarabun',sans-serif;
+
+color:white;
+
+text-align:center;
+
+overflow-x:hidden;
+
+background:
+
+radial-gradient(circle at top,#b8860b,#4a3000,#080500);
+
+}
+
+
+
+/* แสงทอง */
+
+.gold-light{
+
+position:fixed;
+
+width:600px;
+
+height:600px;
+
+background:#ffd700;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+opacity:.25;
+
+top:-150px;
+
+left:20%;
+
+animation:goldMove 8s infinite alternate;
+
+z-index:0;
+
+}
+
+
+
+@keyframes goldMove{
+
+100%{
+
+transform:translate(150px,100px);
+
+}
+
+}
+
+
+
+
+/* เหรียญทอง */
+
+.coins{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+z-index:1;
+
+pointer-events:none;
+
+}
+
+
+
+.coins span{
+
+position:absolute;
+
+top:-80px;
+
+font-size:35px;
+
+animation:coinFall 12s infinite linear;
+
+}
+
+
+
+.coins span:nth-child(1){left:10%;}
+
+.coins span:nth-child(2){left:30%;animation-delay:3s;}
+
+.coins span:nth-child(3){left:50%;animation-delay:5s;}
+
+.coins span:nth-child(4){left:70%;animation-delay:2s;}
+
+.coins span:nth-child(5){left:85%;animation-delay:7s;}
+
+
+
+@keyframes coinFall{
+
+0%{
+
+transform:translateY(-100px) rotate(0deg);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+
+h1{
+
+margin-top:40px;
+
+font-family:'Cinzel';
+
+font-size:45px;
+
+color:#ffe27a;
+
+text-shadow:0 0 25px gold;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+
+.subtitle{
+
+font-size:22px;
+
+color:#fff4c2;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+
+.container{
+
+width:90%;
+
+max-width:1000px;
+
+margin:40px auto;
+
+padding:35px;
+
+background:rgba(60,40,0,.85);
+
+border:3px solid gold;
+
+border-radius:25px;
+
+box-shadow:
+
+0 0 40px black,
+
+0 0 35px gold;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+
+
+.profile-img{
+
+width:220px;
+
+height:220px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:8px solid gold;
+
+box-shadow:0 0 35px gold;
+
+}
+
+
+
+
+.name{
+
+font-family:'Cinzel';
+
+font-size:36px;
+
+color:#ffe27a;
+
+margin:20px;
+
+}
+
+
+
+
+
+.certificate-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+
+
+
+.card{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#805d00,
+
+#241500
+
+);
+
+padding:20px;
+
+border-radius:18px;
+
+border:3px solid gold;
+
+box-shadow:0 0 25px rgba(255,215,0,.5);
+
+}
+
+
+
+
+
+.card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+border:3px solid #ffe27a;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.card img:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 30px gold;
+
+}
+
+
+
+
+
+.card h3{
+
+color:#ffe27a;
+
+margin:15px 0;
+
+}
+
+
+
+
+
+/* รูปใหญ่ */
+
+.viewer{
+
+display:none;
+
+position:fixed;
+
+z-index:10;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.9);
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+
+.viewer img{
+
+max-width:90%;
+
+max-height:90%;
+
+border:5px solid gold;
+
+box-shadow:0 0 40px gold;
+
+}
+
+
+
+
+.button{
+
+display:inline-block;
+
+margin:20px 10px;
+
+padding:18px 35px;
+
+background:
+
+linear-gradient(
+
+gold,
+
+#8b6500
+
+);
+
+color:#211400;
+
+font-weight:bold;
+
+text-decoration:none;
+
+border-radius:12px;
+
+border:3px solid white;
+
+box-shadow:0 0 30px gold;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="gold-light"></div>
+
+
+<div class="coins">
+
+<span>🪙</span>
+<span>🪙</span>
+<span>🪙</span>
+<span>🪙</span>
+<span>🪙</span>
+
+</div>
+
+
+
+
+
+<h1>
+
+🏅 CHAPTER 07 : CERTIFICATES 🏅
+
+</h1>
+
+
+<p class="subtitle">
+
+"บันทึกความสำเร็จของอัศวินแห่งการเรียนรู้"
+
+</p>
+
+
+
+
+
+<div class="container">
+
+
+<img src="images/per.jpg" class="profile-img">
+
+
+<h2 class="name">
+
+สุทธิภัทร พรมราช
+
+</h2>
+
+
+<p>
+
+🏆 Certificate Knight
+
+</p>
+
+
+
+
+<div class="certificate-grid">
+
+
+
+<div class="card">
+
+<img src="images/certificate1.jpg" onclick="openImg(this.src)">
+
+<h3>🏅 เกียรติบัตรที่ 1</h3>
+
+<p>
+
+รายละเอียดรางวัล
+
+<br>
+
+ปีที่ได้รับ : 20XX
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/certificate2.jpg" onclick="openImg(this.src)">
+
+<h3>🏅 เกียรติบัตรที่ 2</h3>
+
+<p>
+
+รายละเอียดรางวัล
+
+<br>
+
+ปีที่ได้รับ : 20XX
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/certificate3.jpg" onclick="openImg(this.src)">
+
+<h3>🏅 เกียรติบัตรที่ 3</h3>
+
+<p>
+
+รายละเอียดรางวัล
+
+<br>
+
+ปีที่ได้รับ : 20XX
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/certificate4.jpg" onclick="openImg(this.src)">
+
+<h3>🏅 เกียรติบัตรที่ 4</h3>
+
+<p>
+
+รายละเอียดรางวัล
+
+<br>
+
+ปีที่ได้รับ : 20XX
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/certificate5.jpg" onclick="openImg(this.src)">
+
+<h3>🏅 เกียรติบัตรที่ 5</h3>
+
+<p>
+
+รายละเอียดรางวัล
+
+<br>
+
+ปีที่ได้รับ : 20XX
+
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/certificate6.jpg" onclick="openImg(this.src)">
+
+<h3>🏅 เกียรติบัตรที่ 6</h3>
+
+<p>
+
+รายละเอียดรางวัล
+
+<br>
+
+ปีที่ได้รับ : 20XX
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+<div class="viewer" id="viewer" onclick="closeImg()">
+
+<img id="bigImg">
+
+</div>
+
+
+
+
+<a href="index.html" class="button">🏠 HOME</a>
+
+<a href="profile.html" class="button">👤 PROFILE</a>
+
+<a href="education.html" class="button">🎓 EDUCATION</a>
+
+<a href="activities.html" class="button">🏆 ACTIVITIES</a>
+
+<a href="skills.html" class="button">✨ SKILLS</a>
+
+<a href="contact.html" class="button">📜 CONTACT</a>
+
+
+
+
+<script>
+
+function openImg(src){
+
+document.getElementById("viewer").style.display="flex";
+
+document.getElementById("bigImg").src=src;
+
+}
+
+
+function closeImg(){
+
+document.getElementById("viewer").style.display="none";
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
