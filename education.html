@@ -1,20 +1,425 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SUTTHIPHAT ROYAL KNIGHT - Education</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+
+min-height:100vh;
+
+font-family:'Sarabun',sans-serif;
+
+color:white;
+
+text-align:center;
+
+background:
+radial-gradient(circle at top,#2563eb,#172554,#020617);
+
+overflow-x:hidden;
+
+}
+
+
+/* แสงเวทมนตร์ */
+
+.magic{
+
+position:fixed;
+
+width:500px;
+
+height:500px;
+
+background:#ffd700;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+opacity:.18;
+
+top:0;
+
+left:20%;
+
+animation:magicMove 8s infinite;
+
+z-index:0;
+
+}
+
+
+@keyframes magicMove{
+
+50%{
+transform:translate(200px,100px);
+}
+
+}
+
+
+
+/* กลีบกุหลาบ */
+
+.rose-petals{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+
+.rose-petals span{
+
+position:absolute;
+
+top:-60px;
+
+font-size:30px;
+
+animation:roseFall 12s infinite linear;
+
+}
+
+
+.rose-petals span:nth-child(1){left:10%;}
+.rose-petals span:nth-child(2){left:25%;animation-delay:3s;}
+.rose-petals span:nth-child(3){left:40%;animation-delay:6s;}
+.rose-petals span:nth-child(4){left:55%;animation-delay:1s;}
+.rose-petals span:nth-child(5){left:70%;animation-delay:5s;}
+
+
+@keyframes roseFall{
+
+0%{
+transform:translateY(-50px) rotate(0);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+
+
+
+h1{
+
+font-family:'Cinzel';
+
+font-size:48px;
+
+color:#ffd700;
+
+text-shadow:0 0 20px gold;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+.subtitle{
+
+font-size:22px;
+
+color:#eee;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+
+.profile{
+
+width:85%;
+
+max-width:850px;
+
+margin:40px auto;
+
+padding:35px;
+
+background:rgba(15,23,42,.85);
+
+border:3px solid gold;
+
+border-radius:25px;
+
+box-shadow:
+
+0 0 40px black,
+
+0 0 30px gold;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+.profile img{
+
+width:240px;
+
+height:240px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:8px solid gold;
+
+box-shadow:0 0 40px gold;
+
+}
+
+
+
+.name{
+
+font-family:'Cinzel';
+
+font-size:38px;
+
+color:#ffd700;
+
+}
+
+
+
+
+.status{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px;
+
+margin-top:30px;
+
+}
+
+
+
+
+.box{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#1e3a8a,
+
+#020617
+
+);
+
+padding:25px;
+
+border:2px solid #d4af37;
+
+border-radius:15px;
+
+text-align:left;
+
+box-shadow:0 0 20px rgba(255,215,gold,.4);
+
+}
+
+
+
+.box h3{
+
+color:#ffd700;
+
+}
+
+
+
+
+.scroll{
+
+margin-top:25px;
+
+padding:25px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#fff3c4,
+
+#d4af37
+
+);
+
+color:#321;
+
+border-radius:15px;
+
+border:5px solid #8b7500;
+
+text-align:left;
+
+line-height:1.8;
+
+}
+
+
+
+.scroll img{
+
+width:100%;
+
+max-width:500px;
+
+border-radius:15px;
+
+border:5px solid #8b7500;
+
+}
+
+
+
+.button{
+
+display:inline-block;
+
+margin:30px 10px;
+
+padding:18px 40px;
+
+background:
+
+linear-gradient(
+
+#ffd700,
+
+#8b7500
+
+);
+
+color:black;
+
+font-weight:bold;
+
+text-decoration:none;
+
+border-radius:12px;
+
+border:3px solid white;
+
+box-shadow:0 0 30px gold;
+
+}
+
+
+
+.button:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+
+@media(max-width:700px){
+
+.status{
+
+grid-template-columns:1fr;
+
+}
+
+
+h1{
+
+font-size:32px;
+
+}
+
+}
+
+
+</style>
+
+</head>
+
+
+
 <body>
 
-<div class="forest-light"></div>
 
-<div class="leaves">
+<div class="magic"></div>
 
-<span>🍃</span>
-<span>🍂</span>
-<span>🍃</span>
-<span>🍂</span>
-<span>🍃</span>
+
+<div class="rose-petals">
+
+<span>🌹</span>
+<span>🌹</span>
+<span>🌹</span>
+<span>🌹</span>
+<span>🌹</span>
 
 </div>
 
 
+
 <h1>
-🎓 CHAPTER 04 : EDUCATION 🎓
+🎓 CHAPTER 04 : EDUCATION PATH 🎓
 </h1>
 
 
@@ -24,11 +429,11 @@
 
 
 
-<div class="container">
+
+<div class="profile">
 
 
-<img src="images/per.jpg" class="profile-img" alt="Profile">
-
+<img src="images/per.jpg">
 
 
 <h2 class="name">
@@ -37,121 +442,106 @@
 
 
 <p>
-📚 Education Journey
+📚 Education Knight
 </p>
 
 
 
 
-<div class="timeline">
+<div class="scroll">
+
+<h3>🏫 Education Journey</h3>
 
 
-<div class="event">
+<b>🏫 ประถมศึกษา</b>
 
-<h3>🏫 ประถมศึกษา</h3>
+<br>
 
-<img src="images/primary.jpg"
-style="width:100%;max-width:400px;height:200px;object-fit:cover;border-radius:15px;border:4px solid #dfff9d;box-shadow:0 0 20px #76ff03;margin:15px 0;">
+โรงเรียนอนุบาลศีลซำสูง
 
-<p>
-โรงเรียนอนุบาลศีลซำสูง<br>
+<br>
+
 จังหวัดขอนแก่น
-</p>
 
-</div>
-
-
-
-<div class="event">
-
-<h3>🏫 มัธยมศึกษาตอนต้น</h3>
-
-<img src="images/junior.jpg"
-style="width:100%;max-width:400px;height:200px;object-fit:cover;border-radius:15px;border:4px solid #dfff9d;box-shadow:0 0 20px #76ff03;margin:15px 0;">
-
-<p>
-โรงเรียนพงษ์สิริวิทยา<br>
-จังหวัดชลบุรี
-</p>
-
-</div>
-
-
-
-<div class="event">
-
-<h3>🏫 มัธยมศึกษาตอนปลาย</h3>
-
-<img src="images/highschool.jpg"
-style="width:100%;max-width:400px;height:200px;object-fit:cover;border-radius:15px;border:4px solid #dfff9d;box-shadow:0 0 20px #76ff03;margin:15px 0;">
-
-<p>
-โรงเรียนพาทอง<br>
-จังหวัดชลบุรี
-</p>
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="card-grid">
-
-
-
-<div class="card">
-
-<h3>⭐ GPAX</h3>
-
-<p style="font-size:40px;text-align:center;">
-3.75
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>📚 รายวิชาที่ชอบ</h3>
-
-<p>
-
-🔹 คณิตศาสตร์
 
 <br><br>
 
-🔹 ฟิสิกส์
 
-</p>
+<b>🏫 มัธยมศึกษาตอนต้น</b>
+
+<br>
+
+โรงเรียนพงษ์สิริวิทยา
+
+<br>
+
+จังหวัดชลบุรี
+
+
+<br><br>
+
+
+<b>🏫 มัธยมศึกษาตอนปลาย</b>
+
+<br>
+
+โรงเรียนพาทอง
+
+<br>
+
+จังหวัดชลบุรี
+
 
 </div>
 
 
 
 
-<div class="card">
+
+<div class="status">
+
+
+<div class="box">
+
+<h3>⭐ Academic Record</h3>
+
+GPAX : 3.75
+
+
+</div>
+
+
+
+<div class="box">
+
+<h3>📚 รายวิชาที่ชอบ</h3>
+
+- คณิตศาสตร์
+
+<br>
+
+- ฟิสิกส์
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="scroll">
 
 <h3>🏅 ผลการเรียนเด่น</h3>
 
 
-<img src="images/gpax.jpg"
-style="width:100%;border-radius:15px;border:4px solid #dfff9d;box-shadow:0 0 20px #76ff03;">
-
-
-<p style="margin-top:15px;">
-
-มีผลการเรียนที่ดี
-และมุ่งมั่นพัฒนาตนเอง
-
-</p>
+<img src="images/gpax.jpg">
 
 
 </div>
+
 
 
 
@@ -160,29 +550,39 @@ style="width:100%;border-radius:15px;border:4px solid #dfff9d;box-shadow:0 0 20p
 
 
 
-<div>
+<a class="button" href="profile.html">
 
+👤 PROFILE
 
-<a href="profile.html" class="button">
-👤 ประวัติส่วนตัว
 </a>
 
 
-<a href="activities.html" class="button">
-🏆 ผลงานและกิจกรรม
+
+<a class="button" href="activities.html">
+
+🏆 ACTIVITIES
+
 </a>
 
 
-<a href="index.html" class="button">
-🏠 หน้าหลัก
+
+<a class="button" href="index.html">
+
+🏠 HOME
+
 </a>
 
-
-</div>
-
-
-
-</div>
 
 
 </body>
+
+</html>
+
+ไฟล์รูปที่ต้องมี:
+
+images/
+│── per.jpg
+│── gpax.jpg
+
+อันนี้เป็นหน้าเดียวจบครับ ไม่ต้องเอาไปประกอบเพิ่มแล้ว
+ถ้าต้องส่งครูตอนนี้ ให้เอาไฟล์นี้ไปเปิดทดสอบก่อนเลยครับ.
