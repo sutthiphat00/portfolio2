@@ -15,12 +15,12 @@
 
 *{
 box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 
 body{
-
-margin:0;
 
 min-height:100vh;
 
@@ -30,56 +30,60 @@ color:white;
 
 text-align:center;
 
-background:
-radial-gradient(circle at top,#2563eb,#172554,#020617);
-
 overflow-x:hidden;
+
+background:
+
+radial-gradient(circle at top,#8bc34a,#2e7d32,#063006);
 
 }
 
 
-/* แสงเวทมนตร์ */
 
-.magic{
+/* แสงป่า */
+
+.forest-light{
 
 position:fixed;
 
-width:500px;
+width:600px;
 
-height:500px;
+height:600px;
 
-background:#ffd700;
+background:#d8ff9a;
 
 border-radius:50%;
 
 filter:blur(180px);
 
-opacity:.18;
+opacity:.25;
 
-top:0;
+top:-150px;
 
 left:20%;
 
-animation:magicMove 8s infinite;
+animation:lightMove 8s infinite alternate;
 
 z-index:0;
 
 }
 
 
-@keyframes magicMove{
+@keyframes lightMove{
 
-50%{
-transform:translate(200px,100px);
+100%{
+
+transform:translate(150px,100px);
+
 }
 
 }
 
 
 
-/* กลีบกุหลาบ */
+/* ใบไม้ */
 
-.rose-petals{
+.leaves{
 
 position:fixed;
 
@@ -100,56 +104,76 @@ z-index:1;
 }
 
 
-.rose-petals span{
+
+.leaves span{
 
 position:absolute;
 
-top:-60px;
+top:-80px;
 
-font-size:30px;
+font-size:35px;
 
-animation:roseFall 12s infinite linear;
+animation:fall 12s infinite linear;
 
 }
 
 
-.rose-petals span:nth-child(1){left:10%;}
-.rose-petals span:nth-child(2){left:25%;animation-delay:3s;}
-.rose-petals span:nth-child(3){left:40%;animation-delay:6s;}
-.rose-petals span:nth-child(4){left:55%;animation-delay:1s;}
-.rose-petals span:nth-child(5){left:70%;animation-delay:5s;}
+
+.leaves span:nth-child(1){left:10%;}
+
+.leaves span:nth-child(2){left:30%;animation-delay:3s;}
+
+.leaves span:nth-child(3){left:50%;animation-delay:5s;}
+
+.leaves span:nth-child(4){left:70%;animation-delay:2s;}
+
+.leaves span:nth-child(5){left:85%;animation-delay:7s;}
 
 
-@keyframes roseFall{
+
+@keyframes fall{
 
 0%{
-transform:translateY(-50px) rotate(0);
+
+transform:translateY(-100px) rotate(0deg);
+
 opacity:0;
+
 }
+
 
 20%{
+
 opacity:1;
+
 }
+
 
 100%{
-transform:translateY(110vh) rotate(360deg);
+
+transform:translateY(110vh) rotate(720deg);
+
 opacity:0;
-}
 
 }
 
+}
 
 
+
+/* หัวข้อ */
 
 h1{
 
+margin-top:40px;
+
 font-family:'Cinzel';
 
-font-size:48px;
+font-size:45px;
 
-color:#ffd700;
+color:#eaff9b;
 
-text-shadow:0 0 20px gold;
+text-shadow:0 0 20px #9cff4d;
 
 position:relative;
 
@@ -163,7 +187,7 @@ z-index:2;
 
 font-size:22px;
 
-color:#eee;
+color:#f1ffe8;
 
 position:relative;
 
@@ -174,27 +198,29 @@ z-index:2;
 
 
 
-.profile{
+.container{
 
 width:85%;
 
-max-width:850px;
+max-width:900px;
 
 margin:40px auto;
 
 padding:35px;
 
-background:rgba(15,23,42,.85);
+background:
 
-border:3px solid gold;
+rgba(0,60,20,.75);
+
+border:3px solid #b8ff80;
 
 border-radius:25px;
 
 box-shadow:
 
-0 0 40px black,
+0 0 35px rgba(0,0,0,.5),
 
-0 0 30px gold;
+0 0 30px #76ff03;
 
 position:relative;
 
@@ -204,21 +230,23 @@ z-index:2;
 
 
 
-.profile img{
 
-width:240px;
+.profile-img{
 
-height:240px;
+width:220px;
+
+height:220px;
 
 border-radius:50%;
 
 object-fit:cover;
 
-border:8px solid gold;
+border:8px solid #dfff9d;
 
-box-shadow:0 0 40px gold;
+box-shadow:0 0 30px #b2ff59;
 
 }
+
 
 
 
@@ -226,110 +254,131 @@ box-shadow:0 0 40px gold;
 
 font-family:'Cinzel';
 
-font-size:38px;
+font-size:36px;
 
-color:#ffd700;
+color:#eaff9b;
 
-}
-
-
-
-
-.status{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:20px;
-
-margin-top:30px;
+margin:20px;
 
 }
 
 
 
+/* Timeline */
 
-.box{
+.timeline{
 
-background:
+border-left:5px solid #b6ff7a;
 
-linear-gradient(
+padding-left:40px;
 
-135deg,
-
-#1e3a8a,
-
-#020617
-
-);
-
-padding:25px;
-
-border:2px solid #d4af37;
-
-border-radius:15px;
+margin-top:40px;
 
 text-align:left;
 
-box-shadow:0 0 20px rgba(255,215,gold,.4);
-
 }
 
 
 
-.box h3{
+.event{
 
-color:#ffd700;
+background:rgba(255,255,255,.1);
 
-}
-
-
-
-
-.scroll{
-
-margin-top:25px;
-
-padding:25px;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-#fff3c4,
-
-#d4af37
-
-);
-
-color:#321;
+padding:20px;
 
 border-radius:15px;
 
-border:5px solid #8b7500;
-
-text-align:left;
-
-line-height:1.8;
+margin-bottom:30px;
 
 }
 
 
 
-.scroll img{
+.event h3{
+
+color:#eaff9b;
+
+margin-bottom:10px;
+
+}
+
+
+
+
+.school-img{
 
 width:100%;
 
-max-width:500px;
+max-width:450px;
+
+height:230px;
+
+object-fit:cover;
 
 border-radius:15px;
 
-border:5px solid #8b7500;
+border:4px solid #dfff9d;
+
+box-shadow:0 0 20px #76ff03;
+
+margin:15px 0;
 
 }
+
+
+
+
+
+.card-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+gap:20px;
+
+margin-top:35px;
+
+}
+
+
+
+.card{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(46,125,50,.8),
+
+rgba(0,60,20,.8)
+
+);
+
+padding:25px;
+
+border-radius:18px;
+
+border:2px solid #b8ff80;
+
+text-align:left;
+
+box-shadow:0 0 20px rgba(180,255,120,.3);
+
+}
+
+
+
+.card h3{
+
+color:#eaff9b;
+
+margin-bottom:15px;
+
+}
+
 
 
 
@@ -339,19 +388,19 @@ display:inline-block;
 
 margin:30px 10px;
 
-padding:18px 40px;
+padding:18px 35px;
 
 background:
 
 linear-gradient(
 
-#ffd700,
+#dfff9d,
 
-#8b7500
+#4caf50
 
 );
 
-color:black;
+color:#123;
 
 font-weight:bold;
 
@@ -361,7 +410,7 @@ border-radius:12px;
 
 border:3px solid white;
 
-box-shadow:0 0 30px gold;
+box-shadow:0 0 20px #9cff4d;
 
 }
 
@@ -378,16 +427,17 @@ transform:scale(1.1);
 
 @media(max-width:700px){
 
-.status{
+h1{
 
-grid-template-columns:1fr;
+font-size:30px;
 
 }
 
+.container{
 
-h1{
+width:95%;
 
-font-size:32px;
+padding:20px;
 
 }
 
@@ -396,6 +446,7 @@ font-size:32px;
 
 </style>
 
+
 </head>
 
 
@@ -403,59 +454,77 @@ font-size:32px;
 <body>
 
 
-<div class="magic"></div>
+
+<div class="forest-light"></div>
 
 
-<div class="rose-petals">
+<div class="leaves">
 
-<span>🌹</span>
-<span>🌹</span>
-<span>🌹</span>
-<span>🌹</span>
-<span>🌹</span>
+<span>🍃</span>
+<span>🍂</span>
+<span>🍃</span>
+<span>🍂</span>
+<span>🍃</span>
 
 </div>
 
 
 
+
 <h1>
-🎓 CHAPTER 04 : EDUCATION PATH 🎓
+
+🎓 CHAPTER 04 : EDUCATION 🎓
+
 </h1>
 
 
+
 <p class="subtitle">
+
 "เส้นทางการศึกษาของอัศวินแห่งการเรียนรู้"
+
 </p>
 
 
 
 
-<div class="profile">
+
+<div class="container">
 
 
-<img src="images/per.jpg">
+
+<img src="images/per.jpg" class="profile-img">
+
 
 
 <h2 class="name">
+
 สุทธิภัทร พรมราช
+
 </h2>
 
 
 <p>
+
 📚 Education Knight
+
 </p>
 
 
 
 
-<div class="scroll">
 
-<h3>🏫 Education Journey</h3>
+<div class="timeline">
 
 
-<b>🏫 ประถมศึกษา</b>
 
-<br>
+<div class="event">
+
+<h3>🏫 ประถมศึกษา</h3>
+
+<img src="images/primary.jpg" class="school-img">
+
+<p>
 
 โรงเรียนอนุบาลศีลซำสูง
 
@@ -463,13 +532,21 @@ font-size:32px;
 
 จังหวัดขอนแก่น
 
+</p>
 
-<br><br>
+</div>
 
 
-<b>🏫 มัธยมศึกษาตอนต้น</b>
 
-<br>
+
+
+<div class="event">
+
+<h3>🏫 มัธยมศึกษาตอนต้น</h3>
+
+<img src="images/junior.jpg" class="school-img">
+
+<p>
 
 โรงเรียนพงษ์สิริวิทยา
 
@@ -477,13 +554,21 @@ font-size:32px;
 
 จังหวัดชลบุรี
 
+</p>
 
-<br><br>
+</div>
 
 
-<b>🏫 มัธยมศึกษาตอนปลาย</b>
 
-<br>
+
+
+<div class="event">
+
+<h3>🏫 มัธยมศึกษาตอนปลาย</h3>
+
+<img src="images/highschool.jpg" class="school-img">
+
+<p>
 
 โรงเรียนพาทอง
 
@@ -491,6 +576,11 @@ font-size:32px;
 
 จังหวัดชลบุรี
 
+</p>
+
+</div>
+
+
 
 </div>
 
@@ -498,46 +588,52 @@ font-size:32px;
 
 
 
-<div class="status">
+
+<div class="card-grid">
 
 
-<div class="box">
+<div class="card">
 
-<h3>⭐ Academic Record</h3>
+<h3>⭐ GPAX</h3>
 
-GPAX : 3.75
+<p>
 
+3.75
+
+</p>
 
 </div>
 
 
 
-<div class="box">
+
+<div class="card">
 
 <h3>📚 รายวิชาที่ชอบ</h3>
 
-- คณิตศาสตร์
+<p>
 
-<br>
+🔹 คณิตศาสตร์
 
-- ฟิสิกส์
+<br><br>
 
+🔹 ฟิสิกส์
+
+</p>
 
 </div>
 
 
-</div>
 
 
-
-
-
-<div class="scroll">
+<div class="card">
 
 <h3>🏅 ผลการเรียนเด่น</h3>
 
+<img src="images/gpax.jpg" class="school-img">
 
-<img src="images/gpax.jpg">
+</div>
+
 
 
 </div>
@@ -545,28 +641,22 @@ GPAX : 3.75
 
 
 
-</div>
 
-
-
-
-<a class="button" href="profile.html">
+<a href="profile.html" class="button">
 
 👤 PROFILE
 
 </a>
 
 
-
-<a class="button" href="activities.html">
+<a href="activities.html" class="button">
 
 🏆 ACTIVITIES
 
 </a>
 
 
-
-<a class="button" href="index.html">
+<a href="index.html" class="button">
 
 🏠 HOME
 
@@ -574,15 +664,11 @@ GPAX : 3.75
 
 
 
+
+</div>
+
+
+
 </body>
 
 </html>
-
-ไฟล์รูปที่ต้องมี:
-
-images/
-│── per.jpg
-│── gpax.jpg
-
-อันนี้เป็นหน้าเดียวจบครับ ไม่ต้องเอาไปประกอบเพิ่มแล้ว
-ถ้าต้องส่งครูตอนนี้ ให้เอาไฟล์นี้ไปเปิดทดสอบก่อนเลยครับ.
